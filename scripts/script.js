@@ -1,3 +1,5 @@
+import { Photograph } from './_photographCard.js'
+
 
 let displayAllPhotograph = () => {
 
