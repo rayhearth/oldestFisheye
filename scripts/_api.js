@@ -1,42 +1,11 @@
-export class Api{
-
-     constructor(data) {
-          this._name = data.name
-          this._id = data.id
-          this._city = data.city
-          this._country = data.country
-          this._tagline = data.tagline
-          this._price = data.price
-          this._portrait = data.portrait
+export class Api {
+    
+     url = './data/photographers.json'
+ 
+     async get() {
+         return fetch(this.url)
+             .then(res => res.json())
+             .then(res => res.photographers)
+             .catch(err => console.log('an error occurs', err))
      }
-
-     get name() {
-          return this._name
-     }
-
-     get id() {
-          return thi._id
-     }
-
-     get city() {
-          return this._city
-     }
-
-     get country() {
-          return this._country
-     }
-
-     get tagline() {
-          return this._tagline
-     }
-
-     get price() {
-          return this._price
-     }
-
-     get portrait(){
-          return this._portrait
-     }
-     
-}
-
+ }

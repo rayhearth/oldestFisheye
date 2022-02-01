@@ -1,23 +1,14 @@
-export class Photograph {
+import { Api } from './_api.js'
+export class Photograph extends Api {
 
-    url = './_api.js'
-
-    //import { Api } from './_api.js'//
 
     async getAllPhotograph() {
         try{
-            let blob = await fetch(this.url)
-            let photographs = await blob.json()
+            let photographs = await this.get()
             return this.renderAllPhotograph(photographs)
         } catch (err) {
             console.log(err)
         }
-        // fetch(this.url)
-        //     .then (blob => blob.json())
-        //     .then(data => {
-        //         return data
-        //     })
-        //     .catch(err => console.log(err))
     }
 
     getOnePhotograph(){
@@ -31,16 +22,18 @@ export class Photograph {
         }
         return all
     }
+
     renderOnePhotograph(photograph){
-        return '<article class="photographer">
-            <a href="photographer.html?id=_id">
-                <img src="${this._portrait}" alt="${this._name}">
-                <h2 class="photographer-name">"${this._name}"</h2>
+        console.log(photograph)
+        return `<article class="photographer">
+            <a href="photographer.html?id=${photograph.id}">
+                <img src="assets/images/photographers/${photograph.id}/${photograph.portrait}" alt="${photograph.name}">
+                <h2 class="photographer-name">"${photograph.name}"</h2>
             </a>
-            <p class="photographer-location">"${this._country}", "${this._city}"</p>
-            <p class="photographer-tagline">"${this._tagline}"</p>
-            <p class="photographer-price">"${this._price}"</p>
-      </article>'
+            <p class="photographer-location">"${photograph.country}", "${photograph.city}"</p>
+            <p class="photographer-tagline">"${photograph.tagline}"</p>
+            <p class="photographer-price">"${photograph.price}"</p>
+      </article>`
     }
 
 }

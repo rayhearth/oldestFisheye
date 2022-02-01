@@ -1,5 +1,4 @@
 import { Photograph } from './_photograph.js'
-import { Api } from './_api.js'
 
 let displayAllPhotograph = async () => {
     
