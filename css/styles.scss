@@ -1,7 +1,12 @@
+@import './utils/variables.scss';
+
 @import './base/reset.scss';
 
-@import './utils/variables';
+@import './components/button.scss';
 
-@import './layout/header';
+@import './layout/form.scss';
+@import './layout/header.scss';
+
 @import './pages/acceuil.scss';
+@import './pages/photographers.scss';
 
