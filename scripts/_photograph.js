@@ -32,7 +32,7 @@ export class Photograph extends Api {
             </a>
             <p class="photographer-location">${photograph.city}, ${photograph.country}</p>
             <p class="photographer-tagline">${photograph.tagline}</p>
-            <p class="photographer-price">${photograph.price}</p>
+            <p class="photographer-price">${photograph.price}€/jour</p>
         </article>`
     }
 
