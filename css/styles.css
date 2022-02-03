@@ -22,6 +22,10 @@ img {
   display: block;
 }
 
+img.logo {
+  height: 50px;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -63,18 +67,19 @@ header h1 {
   width: 200px;
   border-radius: 50%;
   margin-bottom: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .photographer_section article a h2 {
   color: #D3573C;
   font-size: 2.25rem;
   margin: 0px;
 }
+.photographer_section article p.photographer-location {
+  font-size: 0.813rem;
+  color: #901C1C;
+}
 .photographer_section article p {
   font-size: 0.625rem;
-  margin: 0px;
-}
-.photographer_section article p:first-child {
-  color: #901c1c;
-  font-size: 0.813rem;
   margin: 0px;
 }/*# sourceMappingURL=styles.css.map */

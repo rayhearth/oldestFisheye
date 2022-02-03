@@ -40,14 +40,13 @@ header{
                 margin: 0px;
             }
         }
+        p.photographer-location{
+            font-size: 0.813rem;
+            color: $red;
+        }
         p{
             font-size: 0.625rem;
             margin: 0px;
-            &:first-child{
-                color: #901c1c;
-                font-size: 0.813rem;
-                margin: 0px;
-            }
         }
     }
 }
