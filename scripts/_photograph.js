@@ -14,12 +14,19 @@ export class Photograph extends Api {
     async getOnePhotograph(id){
         try{
             let photograph = await this.get()+id
-            return photograph
+            return this.renderPhotographProfile(photographs)
         } catch (err) {
             console.log(err)
         }
     }
 
+    renderAllPhotographProfile(photographs){
+        let all=''
+        for(let photograph of photographs){
+            all += this.renderAllPhotographProfile(photograph)
+        }
+        return all
+    }
 
     // Render index
     renderAllPhotograph(photographs){

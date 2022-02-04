@@ -31,7 +31,7 @@ img.logo {
   width: 200px;
   border-radius: 50%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .contact_button {

@@ -4,8 +4,7 @@
 
 main{
     margin: 0 100px;
-
-    .photograph-header {
+    .photographer {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -16,6 +15,11 @@ main{
 
     .filter{
         margin: 50px 0 100px;
+    }
+
+    .gallery{
+        margin: 200px;
+        background-color: aqua;
     }
 }
 

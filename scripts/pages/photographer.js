@@ -10,9 +10,6 @@ let displayPhotograph = async() => {
 
     let photograph = await data.getOnePhotograph(id)
 
-    /*Mise en place du visuel header photograph*/
-    let headerCtn = document.querySelector('.photograph-header')
-    let h1 = document.createElement('h1')
 }
 
 window.addEventListener ('load', displayPhotograph())
