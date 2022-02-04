@@ -56,9 +56,8 @@
         
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
 
-        <img src="./assets/images/photographers/82/TracyGalindo.jpg" alt="">
-        
-        
+        <img class="img-profile" src="./assets/images/photographers/82/TracyGalindo.jpg" alt="">
+      
         <!--MODAL------------------------------------------------>      
         <div id="contact_modal">
           <div class="modal">
@@ -76,7 +75,24 @@
           </div>
         </div>
       </div>
+
+      <!--	FILTER------------------------------------------------>  
+      <div class="filter">
+        <label for="filter">Trier par</label>
+        <select class="btn-select" name="select" id="select">
+            <option value="popularité">Popularité</option>
+            <option value="date">Date</option>
+            <option value="titre">Titre</option>
+        </select>
+      </div>
+
+      <div class="gallery">
+
+      </div>
+
     </main>
+
+    <!--SCRIPT------------------------------------------------> 
     <script type="module" src="../scripts/pages/photographer.js"></script>
   </body>
 </html>

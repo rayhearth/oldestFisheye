@@ -26,6 +26,14 @@ img.logo {
   height: 3.125rem;
 }
 
+.img-profile {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .contact_button {
   font-size: 20px;
   font-weight: bold;
@@ -130,12 +138,7 @@ header h1 {
   font-size: 0;
 }
 .photographer_section article a img {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
   margin-bottom: 20px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .photographer_section article a h2 {
   color: #D3573C;
@@ -160,10 +163,14 @@ header h1 {
   display: none;
 }
 
-.photograph-header {
+main {
+  margin: 0 100px;
+}
+main .photograph-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #FAFAFA;
   height: 300px;
-  margin: 0 100px;
+  padding: 0 35px;
 }/*# sourceMappingURL=styles.css.map */

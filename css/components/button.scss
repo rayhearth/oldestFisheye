@@ -10,3 +10,10 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.btn-select{
+    background-color: $red;
+    border-color: $grey-light;
+    color: white;
+    line-height: $line-height;
+}

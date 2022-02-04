@@ -34,7 +34,7 @@ export class Photograph extends Api {
 
         return `<article class="photographer">
             <a href="photographer.html?id=${photograph.id}">
-                <img src="assets/images/photographers/${photograph.id}/${photograph.portrait}" alt="${photograph.name}">
+                <img class="img-profile" src="assets/images/photographers/${photograph.id}/${photograph.portrait}" alt="${photograph.name}">
                 <h2 class="photographer-name">${photograph.name}</h2>
             </a>
             <p class="photographer-location">${photograph.city}, ${photograph.country}</p>
