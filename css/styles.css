@@ -31,7 +31,7 @@ img.logo {
   width: 200px;
   border-radius: 50%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .contact_button {
@@ -45,6 +45,13 @@ img.logo {
   background-color: #901C1C;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.btn-select {
+  background-color: #901C1C;
+  border-color: #FAFAFA;
+  color: white;
+  line-height: 1.3;
 }
 
 .modal {
@@ -166,11 +173,18 @@ header h1 {
 main {
   margin: 0 100px;
 }
-main .photograph-header {
+main .photographer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FAFAFA;
+  background: #FAFAFA;
   height: 300px;
   padding: 0 35px;
+}
+main .filter {
+  margin: 50px 0 100px;
+}
+main .gallery {
+  margin: 200px;
+  background-color: aqua;
 }/*# sourceMappingURL=styles.css.map */
