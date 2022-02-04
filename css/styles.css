@@ -161,6 +161,8 @@ header h1 {
 }
 
 .photograph-header {
+  display: flex;
+  justify-content: space-between;
   background-color: #FAFAFA;
   height: 300px;
   margin: 0 100px;

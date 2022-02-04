@@ -11,10 +11,17 @@ export class Photograph extends Api {
         }
     }
 
-    getOnePhotograph(){
-        
+    async getOnePhotograph(id){
+        try{
+            let photograph = await this.get()+id
+            return photograph
+        } catch (err) {
+            console.log(err)
+        }
     }
 
+
+    // Render index
     renderAllPhotograph(photographs){
         let all = ''
         for(let photograph of photographs){
@@ -24,7 +31,7 @@ export class Photograph extends Api {
     }
 
     renderOnePhotograph(photograph){
-        console.log(photograph)
+
         return `<article class="photographer">
             <a href="photographer.html?id=${photograph.id}">
                 <img src="assets/images/photographers/${photograph.id}/${photograph.portrait}" alt="${photograph.name}">
@@ -34,6 +41,11 @@ export class Photograph extends Api {
             <p class="photographer-tagline">${photograph.tagline}</p>
             <p class="photographer-price">${photograph.price}€/jour</p>
         </article>`
+    }
+
+    renderPhotographProfile (photograph){
+        return ` 
+        `
     }
 
 }
