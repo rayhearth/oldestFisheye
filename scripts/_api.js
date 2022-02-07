@@ -21,3 +21,16 @@ export class Api {
         .catch(err => console.log('an error occurs', err))
     }
  }
+
+
+ /* test class media ms doute car id photographe et id media
+ class MediaApi extends Api {
+     constructor(url){
+         super(url)
+     }
+
+     async getMedias(){
+        return await this.get()
+     }
+ }
+ */
