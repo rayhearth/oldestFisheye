@@ -9,3 +9,14 @@ export class Api {
              .catch(err => console.log('an error occurs', err))
      }
  }
+
+ class MediaApi extends Api {
+
+    constructor (url){
+        super (url)
+    }
+
+    async getMedia(){
+        return await this.get()
+    }
+ }
