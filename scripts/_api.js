@@ -10,13 +10,14 @@ export class Api {
      }
  }
 
- class MediaApi extends Api {
+ export class MediaApi {
 
-    constructor (url){
-        super (url)
-    }
+    url ='./data/photographers.json'
 
-    async getMedia(){
-        return await this.get()
+    async get() {
+        return fetch(this.url)
+        .then(res => res.json())
+        .then(res => res.media)
+        .catch(err => console.log('an error occurs', err))
     }
  }

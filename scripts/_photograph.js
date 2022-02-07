@@ -1,4 +1,5 @@
 import { Api } from './_api.js'
+import { MediaApi } from './_api.js'
 export class Photograph extends Api {
 
 
@@ -14,19 +15,19 @@ export class Photograph extends Api {
     async getOnePhotograph(id){
         try{
             let photograph = await this.get()+id
-            return this.renderPhotographProfile(photographs)
+            return this.renderPhotographHeader(photograph)
         } catch (err) {
             console.log(err)
         }
     }
 
-    renderAllPhotographProfile(photographs){
-        let all=''
-        for(let photograph of photographs){
-            all += this.renderAllPhotographProfile(photograph)
-        }
-        return all
-    }
+    // renderAllPhotographProfile(photographs){
+    //     let all=''
+    //     for(let photograph of photographs){
+    //         all += this.renderAllPhotographProfile(photograph)
+    //     }
+    //     return all
+    // }
 
     // Render index
     renderAllPhotograph(photographs){
@@ -37,6 +38,7 @@ export class Photograph extends Api {
         return all
     }
 
+    
     renderOnePhotograph(photograph){
 
         return `<article class="photographer">
@@ -50,9 +52,20 @@ export class Photograph extends Api {
         </article>`
     }
 
-    renderPhotographProfile (photograph){
-        return ` 
-        `
+
+    //Render photographProfile
+    renderPhotographHeader(photograph){
+        return ` <div class="photographer-header">
+        <h1>${photograph.name}</h1>
+        <div class="locationandtag">
+          <p class="location">${photograph.city}, ${photograph.country}</p>
+          <p class="tagline">${photograph.tagline}</p>
+        </div>
+      </div>
+      
+      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+
+      <img class="img-profile" src="assets/images/photographers/${photograph.id}/${photograph.portrait}" alt="${photograph.name}">`
     }
 
 }
