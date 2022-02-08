@@ -65,10 +65,6 @@ img.logo {
   height: 10px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-#filter-select option {
-  width: 170px;
-  border-bottom: #FAFAFA;
-}
 
 .modal {
   border-radius: 5px;
@@ -182,7 +178,7 @@ header h1 {
   color: #525252;
 }
 
-#contact_modal {
+#contactModal {
   display: none;
 }
 
@@ -262,19 +258,101 @@ main .photographer .contactModal .content form .formData textarea {
   border: none;
   border-radius: 5px;
 }
-main .portfolio {
+main section.portfolio {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   /*FILTER*/
   /*GALLERY*/
 }
-main .portfolio .filter-form-wrapper {
+main section.portfolio .filter-form-wrapper {
   margin: 50px 0 100px;
 }
-main .portfolio .filter-form-wrapper .filter-form label {
+main section.portfolio .filter-form-wrapper .filter-form label {
   margin-right: 20px;
 }
-main .portfolio .galleryContainer {
+main section.portfolio .galleryContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 2%;
+}
+main section.portfolio .galleryContainer article {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 33.33%;
+  min-width: 380px;
+  min-height: 370px;
+  position: relative;
+}
+main section.portfolio .galleryContainer article .mediaCard {
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 350px;
+  height: 300px;
+  cursor: pointer;
+}
+main section.portfolio .galleryContainer article .mediaIcon {
+  position: absolute;
+  color: #D3573C;
+  opacity: 0.7;
+  height: 36px;
+  font-size: 1.5rem;
+  top: 35%;
+}
+main section.portfolio .galleryContainer article .media-legend {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  padding: 5px 0;
+  max-width: 350px;
+  height: 70px;
+  color: #901C1C;
+}
+main section.portfolio .galleryContainer article .media-legend .media-legend-title {
+  font-size: 1.5rem;
+}
+main section.portfolio .galleryContainer article .media-legend span {
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
+main section.portfolio .galleryContainer article .media-legend .media-legend-like {
+  display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  cursor: pointer;
+}
+main section.portfolio .galleryContainer article .media-legend .media-legend-like svg {
+  height: 24px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  left: 60%;
+  background-color: #DB8876;
+  width: 370px;
+  height: 70px;
+  padding: 0 20px;
+  font-size: 24px;
+  border-radius: 5px 5px 0 0;
+}
+footer .footerInfos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .footerInfos span {
+  margin-right: 10px;
+}
+footer .footerInfos svg {
+  height: 24px;
 }/*# sourceMappingURL=styles.css.map */
