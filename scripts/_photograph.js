@@ -41,7 +41,7 @@ export class Photograph extends Api {
     
     renderOnePhotograph(photograph){
 
-        return `<article class="photographer">
+        return `<article class="photographer-card">
             <a href="photographer.html?id=${photograph.id}">
                 <img class="img-profile" src="assets/images/photographers/${photograph.id}/${photograph.portrait}" alt="${photograph.name}">
                 <h2 class="photographer-name">${photograph.name}</h2>

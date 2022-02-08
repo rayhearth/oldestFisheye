@@ -32,6 +32,7 @@ img.logo {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+  box-shadow: 4px 4px 8px #c4c4c4;
 }
 
 .contact_button {
@@ -45,9 +46,14 @@ img.logo {
   background-color: #901C1C;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s;
+}
+.contact_button:hover {
+  background-color: #DB8876;
+  border: 1px #901C1C;
 }
 
-.btn-select {
+#filter-select {
   background-color: #901C1C;
   border-color: transparent;
   border-radius: 5px;
@@ -58,6 +64,10 @@ img.logo {
   width: 170px;
   height: 10px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+#filter-select option {
+  width: 170px;
+  border-bottom: #FAFAFA;
 }
 
 .modal {
@@ -178,19 +188,93 @@ header h1 {
 
 main {
   margin: 0 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 main .photographer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   background: #FAFAFA;
   height: 300px;
   padding: 0 35px;
 }
-main .filter {
+main .photographer .contactModal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(250, 250, 250, 0.7);
+}
+main .photographer .contactModal .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  height: 900px;
+  width: 670px;
+  background-color: #DB8876;
+  padding: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+main .photographer .contactModal .content .headerModal {
+  display: flex;
+  justify-content: space-between;
+}
+main .photographer .contactModal .content .headerModal .title {
+  display: flex;
+  flex-direction: column;
+  font-size: 36px;
+}
+main .photographer .contactModal .content .headerModal .closeModal {
+  color: white;
+  height: 36px;
+  width: 36px;
+}
+main .photographer .contactModal .content form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+main .photographer .contactModal .content form .formData {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+main .photographer .contactModal .content form .formData .form-label {
+  font-size: 30px;
+  font-weight: bold;
+  color: #525252;
+}
+main .photographer .contactModal .content form .formData input {
+  border: none;
+  border-radius: 5px;
+  height: 64px;
+}
+main .photographer .contactModal .content form .formData textarea {
+  border: none;
+  border-radius: 5px;
+}
+main .portfolio {
+  /*FILTER*/
+  /*GALLERY*/
+}
+main .portfolio .filter-form-wrapper {
   margin: 50px 0 100px;
 }
-main .galleryContainer {
-  margin: 200px;
-  background-color: aqua;
+main .portfolio .filter-form-wrapper .filter-form label {
+  margin-right: 20px;
+}
+main .portfolio .galleryContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 }/*# sourceMappingURL=styles.css.map */

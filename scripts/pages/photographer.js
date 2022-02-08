@@ -1,4 +1,5 @@
 import { Api } from '../_api.js'
+import { MediaApi } from '../_api.js'
 import { Photograph } from '../_photograph.js'
 
 
