@@ -5,6 +5,7 @@ import { Photograph } from '../_photograph.js'
 
 let displayAllPhotograph = async () => {
     
+    // instance de photographe par la class Photograph() on recupère nos photographes 
     let photograph = new Photograph()
     let allPhotographs = await photograph.getAllPhotograph()
     

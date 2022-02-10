@@ -1,9 +1,8 @@
-import { Api } from '../_api.js'
 import { MediaApi } from '../_api.js'
 import { Photograph } from '../_photograph.js'
 
 
-let data = new Photograph()
+// let data = new Photograph()
 
 
 let displayOnePhotograph = async() => {
@@ -13,11 +12,12 @@ let displayOnePhotograph = async() => {
     const id = urlParams.get('id')
     console.log(id)
 
-    let photograph = await api.getOnePhotograph(id)
+    let photograph = new Photograph()
+    let OnePhotograph = await photograph.getOnePhotograph(id)
 
     document.querySelector('#photographer').innerHTML = getOnePhotograph
 
 }
 
-window.addEventListener ('load', displayPhotograph())
+window.addEventListener ('load', displayOnePhotograph())
 
