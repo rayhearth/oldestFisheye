@@ -1,5 +1,7 @@
 import { Api } from './_api.js'
 import { MediaApi } from './_api.js'
+
+/*ma class Photograph hérite de ma class Api*/
 export class Photograph extends Api {
 
 
@@ -14,7 +16,7 @@ export class Photograph extends Api {
 
     async getOnePhotograph(id){
         try{
-            let photograph = await this.get()+id
+            let photograph = await this.get()+'/'+id
             return this.renderPhotographHeader(photograph)
         } catch (err) {
             console.log(err)
@@ -38,7 +40,7 @@ export class Photograph extends Api {
         return all
     }
 
-    
+    /*html de rendu pour un photographe sur la page index*/
     renderOnePhotograph(photograph){
 
         return `<article class="photographer-card">
@@ -53,7 +55,7 @@ export class Photograph extends Api {
     }
 
 
-    //Render photographProfile
+    //Render photographProfileHeader
     renderPhotographHeader(photograph){
         return ` <div class="photographer-header">
         <h1>${photograph.name}</h1>

@@ -6,7 +6,7 @@ import { Photograph } from '../_photograph.js'
 let data = new Photograph()
 
 
-let displayPhotograph = async() => {
+let displayOnePhotograph = async() => {
     
     //recherche du photographe via son id 
     const urlParams = new URLSearchParams (window.location.search)
