@@ -5,10 +5,10 @@ import { Photograph } from '../_photograph.js'
 // let data = new Photograph()
 
 
-let displayOnePhotograph = async() => {
-    
+let displayOnePhotograph = async () => {
+
     //recherche du photographe via son id 
-    const urlParams = new URLSearchParams (window.location.search)
+    const urlParams = new URLSearchParams(window.location.search)
     const id = urlParams.get('id')
     console.log(id)
 
@@ -19,5 +19,5 @@ let displayOnePhotograph = async() => {
 
 }
 
-window.addEventListener ('load', displayOnePhotograph())
+window.addEventListener('load', displayOnePhotograph())
 

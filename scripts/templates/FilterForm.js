@@ -1,25 +1,25 @@
-import { Photograph } from "../_photograph"
+import { FilterMediaAdapter } from "../_FilterMediaAdaptater"
 
 class FilterForm {
     constructor(Media) {
-        this.Movies = Movies
+        this.Media = Media
 
         this.$wrapper = document.createElement('div')
         this.$filterFormWrapper = document.querySelector('.filter-form-wrapper')
         this.$mediasWrapper = document.querySelector('.media-wrapper')
     }
 
-    async filterMedias(actor) {
-        this.clearMoviesWrapper()
+    async filterMedias(media) {
+        this.clearMediasWrapper()
 
         /* Vous pourrez par la suite supprimer ces lignes */
         // const FilterLib = new FilterV1(this.Movies, actor)
         // const FilteredMovies = await FilterLib.filterByActor()
 
-        const AdaptedFilterLib = new FilterMoviesAdapter(this.Medias, Photograph)
-        const FilteredMedias = await AdaptedFilterLib.filterByMedia()
+        const AdaptedFilter = new FilterMediasAdapter(this.Medias, Photograph)
+        const FilteredMedias = await AdaptedFilter.filterByMedia()
 
-        FilteredMovies.forEach(Movie => {
+        FilteredMedias.forEach(Media => {
             const Template = new MediaCard(Media)
             this.$mediasWrapper.appendChild(Template.createMediaCard())
         })
@@ -29,7 +29,7 @@ class FilterForm {
         this.$wrapper
             .querySelector('form')
             .addEventListener('change', e => {
-                const actor = e.target.value
+                const media = e.target.value
                 this.filterMedias(media)
             })
     }
@@ -40,15 +40,14 @@ class FilterForm {
 
     render() {
         const filterForm = `
-            <form class="filter-form" action="#" method="POST">
-                <label for="filter-select">Trier par : </label>
-                <select name="filter-select" id="filter-select">
-                    <option value="">Aucun filtre</option>
-                    <option value="arnold">Popularité/option>
-                    <option value="sylvester">Date</option>
-                    <option value="sylvester">Titre</option>
-                </select>
-            </form>
+        <form class="filter-form" action="#" method="POST">
+        <label for="filter-select">Trier par : </label>
+        <select name="filter-select" id="filter-select">
+            <option value="Popularite">Popularité</option>
+            <option value="Date">Date</option>
+            <option value="Titre">Titre</option>
+        </select>
+    </form>
         `
 
         this.$wrapper.innerHTML = filterForm
