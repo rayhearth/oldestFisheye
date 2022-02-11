@@ -15,7 +15,7 @@ let displayOnePhotograph = async () => {
     let photograph = new Photograph()
     let OnePhotograph = await photograph.getOnePhotograph(id)
 
-    document.querySelector('#photographer').innerHTML = getOnePhotograph
+    document.querySelector('#photographer').innerHTML = OnePhotograph
 
 }
 

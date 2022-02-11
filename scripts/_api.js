@@ -8,6 +8,15 @@ export class Api {
              .then(res => res.photographers)
              .catch(err => console.log('an error occurs', err))
      }
+
+     async getPhotograph(id) {
+         console.log(id)
+        return fetch(this.url)
+        .then(res => res.json())
+        .then(res => res.photographers.filter(p => p.id == id))
+        .catch(err => console.log('an error occurs', err))
+        
+     }
  }
 
  export class MediaApi {
