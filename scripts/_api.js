@@ -1,45 +1,31 @@
 export class Api {
-    
-     url = './data/photographers.json'
- 
-     async get() {
-         return fetch(this.url)
-             .then(res => res.json())
-             .then(res => res.photographers)
-             .catch(err => console.log('an error occurs', err))
-     }
 
-     async getPhotograph(id) {
-         console.log(id)
-        return fetch(this.url)
-        .then(res => res.json())
-        .then(res => res.photographers.filter(p => p.id == id))
-        .catch(err => console.log('an error occurs', err))
-        
-     }
- }
-
- export class MediaApi {
-
-    url ='./data/photographers.json'
+    url = './data/photographers.json'
 
     async get() {
         return fetch(this.url)
-        .then(res => res.json())
-        .then(res => res.media)
-        .catch(err => console.log('an error occurs', err))
+            .then(res => res.json())
+            .then(res => res.photographers)
+            .catch(err => console.log('an error occurs', err))
     }
- }
+
+    async getPhotograph(id) {
+        console.log(id)
+        return fetch(this.url)
+            .then(res => res.json())
+            .then(res => res.photographers.filter(p => p.id == id))
+            .catch(err => console.log('an error occurs', err))
+
+    }
+
+    async getMediaApi() {
+        return fetch(this.url)
+            .then(res => res.json())
+            .then(res => res.media)
+            .catch(err => console.log('an error occurs', err))
+    }
+}
 
 
- /* test class media ms doute car id photographe et id media
- class MediaApi extends Api {
-     constructor(url){
-         super(url)
-     }
 
-     async getMedias(){
-        return await this.get()
-     }
- }
- */
+

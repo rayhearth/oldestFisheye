@@ -1,5 +1,4 @@
 import { Api } from './_api.js'
-import { MediaApi } from './_api.js'
 
 /*ma class Photograph hérite de ma class Api*/
 export class Photograph extends Api {
@@ -51,19 +50,9 @@ export class Photograph extends Api {
         }
     }
 
-    // renderAllPhotographProfile(photographs){
-    //     let all=''
-    //     for(let photograph of photographs){
-    //         all += this.renderAllPhotographProfile(photograph)
-    //     }
-    //     return all
-    // }
-
-
 
     //Render photographProfileHeader
     renderPhotographHeader(photograph){
-      console.log(photograph)
         return ` <div class="photographer-header">
         <h1>${photograph.name}</h1>
         <div class="locationandtag">
