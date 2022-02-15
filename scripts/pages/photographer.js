@@ -24,7 +24,7 @@ let displayAllMedia = async () => {
     let media = new Media()
     let allMedias = await media.getMediaApi()
 
-    document.querySelector('gallery.container').innerHTML = allMedias
+    document.querySelector('gallery.container').innerHTML = AllMedias
 }
 
 window.addEventListener('load', () => displayAllMedia())

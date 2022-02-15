@@ -1,5 +1,4 @@
-import { Api } from '../api/_api.js
-'
+import { Api } from '../api/_api.js'
 
 export class Media extends Api {
 
