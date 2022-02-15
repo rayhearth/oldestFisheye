@@ -1,4 +1,4 @@
-import { Photograph } from '../_photograph.js'
+import { Photograph } from '../models/_photograph.js'
 
 
 /*j'implémente ma méthode pour récup et afficher tout mes photographes*/

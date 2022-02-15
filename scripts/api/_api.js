@@ -10,7 +10,6 @@ export class Api {
     }
 
     async getPhotograph(id) {
-        console.log(id)
         return fetch(this.url)
             .then(res => res.json())
             .then(res => res.photographers.filter(p => p.id == id))

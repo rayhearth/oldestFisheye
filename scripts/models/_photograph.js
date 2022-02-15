@@ -1,34 +1,34 @@
-import { Api } from './_api.js'
+import { Api } from '../api/_api.js'
 
 /*ma class Photograph hérite de ma class Api*/
 export class Photograph extends Api {
 
-/*méthode pour recupérer tous les photographes*/
-    async getAllPhotograph() {
-        try{
-            /*on se met en attente des informations de note class API*/
-            let photographs = await this.get()
-            /*on retourne notre render*/
-            return this.renderAllPhotograph(photographs)
-        } catch (err) {
-            console.log(err)
-        }
+  /*méthode pour recupérer tous les photographes*/
+  async getAllPhotograph() {
+    try {
+      /*on se met en attente des informations de note class API*/
+      let photographs = await this.get()
+      /*on retourne notre render*/
+      return this.renderAllPhotograph(photographs)
+    } catch (err) {
+      console.log(err)
     }
-    
-    // Render index
-    renderAllPhotograph(photographs){
-        /*variable qui recoit le template de renderOnePhotograph*/
-        let all = ''
-        // pour chacun des photographes récup le render
-        for(let photograph of photographs){
-            all += this.renderOnePhotograph(photograph)
-        }
-        return all
-    }
+  }
 
-    /*html de rendu pour un photographe sur la page index*/
-    renderOnePhotograph(photograph){
-        return `<article class="photographer-card">
+  // Render index
+  renderAllPhotograph(photographs) {
+    /*variable qui recoit le template de renderOnePhotograph*/
+    let all = ''
+    // pour chacun des photographes récup le render
+    for (let photograph of photographs) {
+      all += this.renderOnePhotograph(photograph)
+    }
+    return all
+  }
+
+  /*html de rendu pour un photographe sur la page index*/
+  renderOnePhotograph(photograph) {
+    return `<article class="photographer-card">
             <a href="photographer.html?id=${photograph.id}">
                 <img class="img-profile" src="assets/images/photographers/${photograph.id}/${photograph.portrait}" alt="${photograph.name}">
                 <h2 class="photographer-name">${photograph.name}</h2>
@@ -37,23 +37,24 @@ export class Photograph extends Api {
             <p class="photographer-tagline">${photograph.tagline}</p>
             <p class="photographer-price">${photograph.price}€/jour</p>
         </article>`
+  }
+
+
+  /*méthode pour recupérer un seul photographe*/
+  async getOnePhotograph(id) {
+    //on appelle la methode getOnePhotographe et on lui transmet l'id du photographe
+    try {
+      let Onephotograph = await this.getPhotograph(id)
+      return this.renderPhotographHeader(Onephotograph[0])
+    } catch (err) {
+      console.log(err)
     }
+  }
 
 
-    /*méthode pour recupérer un seul photographe*/
-    async getOnePhotograph(id){
-        try{
-            let Onephotograph = await this.getPhotograph(id)
-            return this.renderPhotographHeader(Onephotograph[0])
-        } catch (err) {
-            console.log(err)
-        }
-    }
-
-
-    //Render photographProfileHeader
-    renderPhotographHeader(photograph){
-        return ` <div class="photographer-header">
+  //Render photographProfileHeader
+  renderPhotographHeader(photograph) {
+    return ` <div class="photographer-header">
         <h1>${photograph.name}</h1>
         <div class="locationandtag">
           <p class="location">${photograph.city}, ${photograph.country}</p>
@@ -98,6 +99,6 @@ export class Photograph extends Api {
         </div>
       </div>
     </div>`
-    }
+  }
 
 }
