@@ -2,7 +2,7 @@ import { Api } from '../api/_api.js'
 
 export class Media extends Api {
 
-    /*méthode pour récupérer tous les média*/
+    /*méthode pour récupérer tous les médias*/
 
     async getAllMedia() {
         try {
@@ -24,7 +24,7 @@ export class Media extends Api {
     renderOneMedia(media) {
         return `<article class="mediaContentCard">
         <video class="mediaCard" media-id=${media.id} poster="">
-          <source src=""
+          <source src="assets/images/photographers/${media.photographerId}/media/${media.image}"
             type="video/mp4">
         </video>
         <svg class="svg-inline--fa fa-video mediaIcon" aria-hidden="true" focusable="false" data-prefix="fas"
@@ -36,7 +36,7 @@ export class Media extends Api {
         <div class="media-legend">
           <p class="media-legend-title">${media.title}</p>
           <div class="media-legend-like" liked="no" data-media-id="5234343">
-            <span class="media-legend-cunt" id="like-cunt">142</span>
+            <span class="media-legend-cunt" id="like-cunt">${media.likes}</span>
             <svg class="hearth" aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart" role="img"
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
               <path fill="currentColor"
