@@ -4,10 +4,10 @@ export class Media extends Api {
 
     /*méthode pour récupérer tous les média*/
 
-    async getAllMedias() {
+    async getAllMedia() {
         try {
             let medias = await this.getMediaApi()
-            return this.renderAllMedias(medias)
+            return this.renderAllMedia(medias)
         } catch (err) {
             console.log(err)
         }

@@ -8,6 +8,7 @@ let displayOnePhotograph = async () => {
 
     //recherche du photographe via son id 
     const urlParams = new URLSearchParams(window.location.search)
+    //on appelle la methode get de Api et on recupère 'id'
     const id = urlParams.get('id')
 
     let photograph = new Photograph()
@@ -20,11 +21,11 @@ let displayOnePhotograph = async () => {
 window.addEventListener('load', displayOnePhotograph())
 
 let displayAllMedia = async () => {
-
     let media = new Media()
-    let allMedias = await media.getMediaApi()
-
-    document.querySelector('gallery.container').innerHTML = AllMedias
+    let AllMedias = await media.getAllMedia()
+    
+    console.log(media)
+    document.querySelector('.galleryContainer').innerHTML = AllMedias
 }
 
-window.addEventListener('load', () => displayAllMedia())
+window.addEventListener('load' , displayAllMedia())
