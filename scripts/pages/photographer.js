@@ -22,7 +22,7 @@ window.addEventListener('load', displayOnePhotograph())
 
 let displayAllMedia = async () => {
     //test pour recup id via url et via media
-    const photogtapherId = medias.filter (media => media.photogtapherId == urlId)
+    const photogtapherId = media.filter (media => media.photogtapherId == urlId)
 
     let media = new Media()
     let AllMedias = await media.getAllMedia(photogtapherId)
