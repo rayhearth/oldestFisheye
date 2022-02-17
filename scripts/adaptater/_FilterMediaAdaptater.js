@@ -1,7 +1,7 @@
-import { MediaApi } from "../_api"
+import { Api } from "../_api"
 
-class FilterMediaAdapter {
-    constructor(photographer, media) {
+export class FilterMediaAdapter extends Api {
+    constructor(photographerId, Media) {
         this.Media = Media
         this.photographerId = this.photographerId
     }

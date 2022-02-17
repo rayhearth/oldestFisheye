@@ -6,7 +6,7 @@ export class Media extends Api {
 
     async getAllMedia() {
         try {
-            let medias = await this.getMediaApi()
+            let medias = await this.getMediaApi(photographerId)
             return this.renderAllMedia(medias)
             /*c'est là que se situe le pb*/
         } catch (err) {
