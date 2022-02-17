@@ -8,10 +8,20 @@ export class Media extends Api {
         try {
             let medias = await this.getMediaApi()
             return this.renderAllMedia(medias)
+            /*c'est là que se situe le pb*/
         } catch (err) {
             console.log(err)
         }
     }
+
+    // async getOneMedia (photographerId) {
+    //   try{
+    //     let OneMedia = await this.getMedia(photographerId)
+    //     return this.renderOneMedia(OneMedia[0])
+    //   }catch(err){
+    //     console.log(err)
+    //   }
+    // }
 
     renderAllMedia(medias) {
         let all = ''
