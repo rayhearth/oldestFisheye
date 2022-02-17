@@ -3,7 +3,7 @@ import { Api } from "../_api"
 export class FilterMediaAdapter extends Api {
     constructor(photographerId, Media) {
         this.Media = Media
-        this.photographerId = this.photographerId
+        this.photographerId = photographerId
     }
 
     async filterByMedia() {
