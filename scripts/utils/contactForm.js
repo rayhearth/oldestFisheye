@@ -1,16 +1,16 @@
-export class Modal {
+
 
 // DOM Elements
 
+let name = document.querySelector('h1').textContent
+let modal = document.querySelector('#modal')
+let openModalBtn = document.querySelector('#contactBtn')
+let closeModalBtn = document.querySelectorAll('.closeModal')
 
-modal = document.querySelector('#modal')
-openModalBtn = document.querySelector('#contactBtn')
-closeModalBtn = document.querySelectorAll('.closeModal')
-
-form = document.forms['contactForm']
+let form = document.forms['contactForm']
 
 /*Fonction Open Modal*/
-openModal() {
+function openModal() {
     document.body.classList.add('modal-open')
     document.body.classList.add('overflow')
     window.scrollTo(0, 0);
@@ -23,7 +23,7 @@ openModal() {
 
 
 /*Fonction close Modal*/
-closeModal() {
+function closeModal() {
     document.body.classList.remove('modal-open')
     document.body.classList.remove('overflow')
 }
@@ -86,5 +86,4 @@ form.addEventListener("submit", function (e) {
 
 })
 
-}
 

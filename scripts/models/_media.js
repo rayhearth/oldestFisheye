@@ -4,10 +4,10 @@ export class Media extends Api {
 
     /*méthode pour récupérer tous les médias*/
 
-    async getAllMedia() {
+    async getAllMedia(photographerId) {
         try {
-            let medias = await this.getMediaApi(photographerId)
-            return this.renderAllMedia(medias)
+          let medias = await this.getMediaApi(photographerId)
+          return this.renderAllMedia(medias)
             /*c'est là que se situe le pb*/
         } catch (err) {
             console.log(err)
@@ -19,19 +19,20 @@ export class Media extends Api {
     //     let OneMedia = await this.getMedia(photographerId)
     //     return this.renderOneMedia(OneMedia[0])
     //   }catch(err){
-    //     console.log(err)
-    //   }
+      //     console.log(err)
+      //   }
     // }
 
     renderAllMedia(medias) {
-        let all = ''
-        for (let media of medias) {
-            all += this.renderOneMedia(media)
+      let all = ''
+      for (let media of medias) {
+        all += this.renderOneMedia(media)
         }
         return all
     }
 
     renderOneMedia(media) {
+      console.log(media)
         return `<article class="mediaContentCard">
         <video class="mediaCard" media-id=${media.id} poster="">
           <source src="assets/images/photographers/${media.photographerId}/media/${media.image}"
