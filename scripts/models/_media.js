@@ -14,14 +14,6 @@ export class Media extends Api {
         }
     }
 
-    // async getOneMedia (photographerId) {
-    //   try{
-    //     let OneMedia = await this.getMedia(photographerId)
-    //     return this.renderOneMedia(OneMedia[0])
-    //   }catch(err){
-      //     console.log(err)
-      //   }
-    // }
 
     renderAllMedia(medias) {
       let all = ''
