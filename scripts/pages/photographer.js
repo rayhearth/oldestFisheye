@@ -26,8 +26,7 @@ let displayAllMedia = async () => {
     
     let media = new Media()
     let AllMedias = await media.getAllMedia(urlId)
-    
-    console.log(media)
+
     document.querySelector('.galleryContainer').innerHTML = AllMedias
 }
 

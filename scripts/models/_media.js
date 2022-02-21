@@ -3,12 +3,10 @@ import { Api } from '../api/_api.js'
 export class Media extends Api {
 
     /*méthode pour récupérer tous les médias*/
-
     async getAllMedia(photographerId) {
         try {
           let medias = await this.getMediaApi(photographerId)
           return this.renderAllMedia(medias)
-            /*c'est là que se situe le pb*/
         } catch (err) {
             console.log(err)
         }
