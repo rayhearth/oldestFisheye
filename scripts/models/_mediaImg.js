@@ -27,7 +27,6 @@ export class MediaImage extends Api {
         return `./assets/photographers/${this._photographerId}/media/${this._image}`
     }
 
-
     get likes() {
         return this._likes
     }
@@ -40,22 +39,15 @@ export class MediaImage extends Api {
         return this._price
     }
 
-    renderOnemedia(media) {
+    renderOneImageCard() {
         return `<article class="mediaContentCard">
-        <video class="mediaCard" media-id=${media.id} poster="">
-          <source src="assets/images/photographers/${media.photographerId}/media/${media.image}"
-            type="video/mp4">
-        </video>
-        <svg class="svg-inline--fa fa-video mediaIcon" aria-hidden="true" focusable="false" data-prefix="fas"
-          data-icon="video" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="">
-          <path fill="currentColor"
-            d="M384 112v288c0 26.51-21.49 48-48 48h-288c-26.51 0-48-21.49-48-48v-288c0-26.51 21.49-48 48-48h288C362.5 64 384 85.49 384 112zM576 127.5v256.9c0 25.5-29.17 40.39-50.39 25.79L416 334.7V177.3l109.6-75.56C546.9 87.13 576 102.1 576 127.5z">
-          </path>
-        </svg>
+        <a href="photographer.html?${this._id}">
+        <img class="img-portfolio" src="assets/images/${this._photographerId}/${this._image}" alt="${this._title}"></img>
+        </a>
         <div class="media-legend">
-          <p class="media-legend-title">${media.title}</p>
+          <p class="media-legend-title">${this._title}</p>
           <div class="media-legend-like" liked="no" data-media-id="5234343">
-            <span class="media-legend-cunt" id="like-cunt">${media.likes}</span>
+            <span class="media-legend-cunt" id="like-cunt">${this._likes}</span>
             <svg class="hearth" aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart" role="img"
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
               <path fill="currentColor"
