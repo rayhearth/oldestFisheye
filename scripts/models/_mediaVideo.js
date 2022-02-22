@@ -1,19 +1,5 @@
 import { Api } from '../api/_api.js'
 
-export class MediaImage extends Api {
-    constructor(media) {
-        super (media)
-        this._image = media.image
-        this.type ='image'
-    }
-
-    get image() {
-        return `./assets/photographers/${this._photographerId}/media/${this._image}`
-    }
-
-    
-}
-
 export class Video extends Api {
     constructor(media) {
         this._id = media.id
@@ -53,3 +39,6 @@ export class Video extends Api {
     get price() {
         return this._price
     }
+
+    
+}
