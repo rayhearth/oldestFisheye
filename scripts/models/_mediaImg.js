@@ -1,6 +1,6 @@
 import { Api } from '../api/_api.js'
 
-export class Image extends Api {
+export class MediaImage extends Api {
     constructor(media) {
         this._id = media.id
         this._photographerId = media.photographerId
