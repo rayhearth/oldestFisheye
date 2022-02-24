@@ -7,6 +7,6 @@ export class FilterMediaAdapter extends Api {
     }
 
     async filterByMedia() {
-        return await MediaApi.filterByMedia(this.media, this.photographerId)
+        return await getMediaApi.filterByMedia(this.media, this.photographerId)
     }
 }

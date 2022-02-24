@@ -7,7 +7,7 @@ class VideoMediaFactory {
     photographerId = media.photographerId
   }
 
-  getRenderVideo() {
+  RenderVideo() {
     return `
       <video class="picture" media-id=${id} poster="">
         <source src="assets/images/photographers/${photographerId}/media/${video}"type="video/mp4"></video>
@@ -27,7 +27,7 @@ class ImageMediaFactory {
     title = media.title
   }
   //static render(image, photographerId, title) 
-  getRenderImage() {
+  RenderImage() {
     return `   
       <img class="picture" src="assets/photographers/${photographerId}/media/${image}" alt="${title}">`
   }
@@ -49,7 +49,7 @@ export class MediasFactory {
   //           console.log(media)
   //             return `<article class="mediaContentCard">
   //             <div class="mediaCard" media-id=${media.id}>
-  //             ${media.image?VideoMediaFactory:ImageMediaFactory}
+  //             ${media.video?VideoMediaFactory:ImageMediaFactory}
   //             </div>
   //             <div class="media-legend">
   //               <p class="media-legend-title">${media.title}</p>

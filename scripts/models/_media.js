@@ -12,7 +12,7 @@ export class Media extends Api {
       let medias = await this.getMediaApi(photographerId)
 
       let renderImage = medias.map(media => new MediasFactory(media,"image"))
-      let renderVideo = medias.map(media=> new MediasFactory(media,"video"))
+      let renderVideo = medias.map(media => new MediasFactory(media,"video"))
 
       renderPicture = renderImage.concat(renderVideo)
 
