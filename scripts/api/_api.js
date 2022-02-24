@@ -24,12 +24,6 @@ export class Api {
             .catch(err => console.log('an error occurs', err))
     }
 
-    // async getMediaApi(photographerId) {
-    //     return fetch(this.url)
-    //         .then(res => res.json())
-    //         .then(res => res.media.filter(p => p.photographerId == photographerId))
-    //         .catch(err => console.log('an error occurs', err))
-    // }
 }
 
 
