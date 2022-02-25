@@ -1,15 +1,17 @@
 //2 constructor avec une fonction statique qui permettent de recup le infos du json et une fonction statique pour prep le rendu html
 
-class VideoMediaFactory {
+export class VideoMediaFactory {
   constructor(media) {
     this._video = media.video
     this._id = media.id
     this._photographerId = media.photographerId
+    this._title = media.title
+    this._likes = media.likes
   }
 
   RenderVideo() {
     return `
-      <video class="picture" media-id=${this._idid} poster="">
+      <video class="picture" media-id=${this._id} poster="">
         <source src="assets/images/photographers/${this._photographerId}/media/${this._video}"type="video/mp4"></video>
         <svg class="svg-inline--fa fa-video mediaIcon" aria-hidden="true" focusable="false" data-prefix="fas"
         data-icon="video" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="">
@@ -19,31 +21,23 @@ class VideoMediaFactory {
         </svg>`
   }
 }
-
-class ImageMediaFactory {
+        
+export class ImageMediaFactory {
   constructor(media) {
-    this._image = media.image
+    // console.log("image")
+    // console.log(media)
+    this._image = media.image 
     this._photographerId = media.photographerId
     this._title = media.title
   }
-  //static render(image, photographerId, title) 
+  
   RenderImage() {
     return `   
-      <img class="picture" src="assets/photographers/${this.photographerId}/media/${this._image}" alt="${this._title}">`
+      <img class="picture" src="assets/photographers/${this._photographerId}/media/${this._image}" alt="${this._title}">`
   }
 }
 
-export class MediasFactory {
 
-  constructor(media, type) {
-    if (type === 'image') {
-      return new ImageMediaFactory(media)
-    } else if (type === 'video') {
-      return new VideoMediaFactory(media)
-    } else {
-      throw 'unkown format type'
-    }
-  }
 
   //     renderOneMedia(media) {
   //           console.log(media)
@@ -65,4 +59,3 @@ export class MediasFactory {
   //             </div>
   //           </article>`
   // }
-}

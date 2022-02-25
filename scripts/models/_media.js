@@ -1,22 +1,26 @@
 import { Api } from '../api/_api.js'
-import { MediasFactory } from '../factories/_mediasfactory.js'
+import { VideoMediaFactory , ImageMediaFactory } from '../factories/_mediasfactory.js'
+
 
 export class Media extends Api {
-
-
 
 
   /*méthode pour récupérer tous les médias*/
   async getAllMedia(photographerId) {
     try {
       let medias = await this.getMediaApi(photographerId)
+      // console.log(medias)
 
-      let renderImage = medias.map(media => new MediasFactory(media,"image"))
-      let renderVideo = medias.map(media => new MediasFactory(media,"video"))
+      // let renderPicture = [...renderImage,...renderVideo]
+      let renderPicture = medias.map(media => {
+        if (media.hasOwnProperty("image")){
+          return new ImageMediaFactory (media)
+        } else {
+          return new VideoMediaFactory(media)
+        }
+      })
 
-      renderPicture = renderImage.concat(renderVideo)
-
-      return this.renderAllMedia(medias)
+      return this.renderAllMedia(renderPicture)
     } catch (err) {
       console.log(err)
     }
@@ -37,7 +41,8 @@ export class Media extends Api {
     console.log(media)
       return `<article class="mediaContentCard">
       <div class="mediaCard" media-id=${media.id}>
-      ${renderPicture}
+
+      
       </div>
       <div class="media-legend">
         <p class="media-legend-title">${media.title}</p>
