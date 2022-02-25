@@ -2,15 +2,15 @@
 
 class VideoMediaFactory {
   constructor(media) {
-    video = media.video
-    id = media.id
-    photographerId = media.photographerId
+    this._video = media.video
+    this._id = media.id
+    this._photographerId = media.photographerId
   }
 
   RenderVideo() {
     return `
-      <video class="picture" media-id=${id} poster="">
-        <source src="assets/images/photographers/${photographerId}/media/${video}"type="video/mp4"></video>
+      <video class="picture" media-id=${this._idid} poster="">
+        <source src="assets/images/photographers/${this._photographerId}/media/${this._video}"type="video/mp4"></video>
         <svg class="svg-inline--fa fa-video mediaIcon" aria-hidden="true" focusable="false" data-prefix="fas"
         data-icon="video" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="">
         <path fill="currentColor"
@@ -22,14 +22,14 @@ class VideoMediaFactory {
 
 class ImageMediaFactory {
   constructor(media) {
-    image = media.image
-    photographerId = media.photographerId
-    title = media.title
+    this._image = media.image
+    this._photographerId = media.photographerId
+    this._title = media.title
   }
   //static render(image, photographerId, title) 
   RenderImage() {
     return `   
-      <img class="picture" src="assets/photographers/${photographerId}/media/${image}" alt="${title}">`
+      <img class="picture" src="assets/photographers/${this.photographerId}/media/${this._image}" alt="${this._title}">`
   }
 }
 
