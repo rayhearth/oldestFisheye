@@ -85,8 +85,36 @@ export class ImageMediaFactory {
 
   get renderImage() {
     return `   
-      <img class="picture" src="assets/images/photographers/${this._photographerId}/media/${this._image}" alt="${this._title}">`
+      <img role="button" class="picture" src="assets/images/photographers/${this._photographerId}/media/${this._image}" alt="${this._title}">`
   }
 }
 
+/* lightbox*/
 
+export class lightbox {
+
+  constructor(media) {
+    // console.log("image")
+    // console.log(media)
+    this._id = media.id
+    this._photographerId = media.photographerId
+    this._title = media.title
+    this._image = media.image
+    this._likes = media.likes
+    this._date = media.date
+    this._price = media.price
+  }
+
+  get lightboxSlides(){
+    return `<div class="ligthbox">
+    <button class="lightbox__close">close</button>
+    <button class="lightbox__next">next</button>
+    <button class="lightbox__prev">previous</button>
+    <div class="lightbox__container">
+      <img src="" alt="">
+    </div>
+  </div>`
+
+  }
+  
+}

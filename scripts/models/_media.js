@@ -45,7 +45,7 @@ export class Media extends Api {
       </div>
       <div class="media-legend">
         <p class="media-legend-title">${media._title}</p>
-        <div class="media-legend-like" liked="no" data-media-id="5234343">
+        <div class="media-legend-like" liked="no" media-id=${media._id}>
           <span class="media-legend-cunt" id="like-cunt">${media._likes}</span>
           <svg class="hearth" aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart" role="img"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
@@ -55,7 +55,16 @@ export class Media extends Api {
           </svg>
         </div>
       </div>
-    </article>`
+    </article>
+    <div class="ligthbox">
+    <button class="lightbox__close">close</button>
+    <button class="lightbox__next">next</button>
+    <button class="lightbox__prev">previous</button>
+    <div class="lightbox__container">
+    ${media._image?media.renderImage:media.renderVideo}
+    </div>
+  </div>
+    `
   }
 
 

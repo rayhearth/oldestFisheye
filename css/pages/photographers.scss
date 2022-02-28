@@ -27,8 +27,8 @@ main{
                     font-size: 1.75rem;
                 }
             }
-
-            .contactModal{
+        }
+            .modal-open{
                 display: none;
                 position: fixed;
                 z-index: 1;
@@ -92,7 +92,6 @@ main{
                     }
                 }
             }
-        }
         @keyframes modalopen {
             from {
                 opacity: 0;
