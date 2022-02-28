@@ -1,4 +1,4 @@
-.contact_button {
+#contactBtn {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -13,7 +13,6 @@
     &:hover{
         background-color: $pink;
         border: 1px $red;
-
     }
 }
 

@@ -64,7 +64,7 @@ export class Photograph extends Api {
         <img class="img-profile" src="assets/images/photographers/${photograph.id}/${photograph.portrait}" alt="">
         </div>
       
-      <div class="modal-open" id="contactModal">
+      <div class="contactModal modal-open" id="contactModal">
         <div class="content">
             <div class="headerModal">
               <div class="title">

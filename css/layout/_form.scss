@@ -1,39 +1,49 @@
-.modal {
+.contactModal {
+    display: none;
+    // flex-direction: column;
+    // justify-content: space-between;
     border-radius: 5px;
-    background-color: #DB8876;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 35px;
     margin: auto;
-    header {
+    padding: 20px;
+    background-color: $red-light;
+    width: 670px;
+    height: 900px;
+    overflow: hidden;
+    align-items: center;
+    animation-name: modalopen;
+    animation-duration: 0.8s;
+    .headerModal {
+        display: flex;
         justify-content: space-between;
         width: 100%;
-        h2 {
-            font-size: 64px;
-            font-weight: normal;
-            text-align: center;
+        .title {
+            h2 {
+                font-size: 64px;
+                font-weight: normal;
+                text-align: center;
+            }
         }
-        img {
-            cursor: pointer;
+        .closeModal {
+            color: white;
+            height: 36px;
+            width: 36px;
         }
     }
     form {
         display: flex;
-        width: 100%;
         flex-direction: column;
         align-items: flex-start;
-        div {
+        width: 100%;
+        .formData {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             width: 100%;
-            align-items: self-start;
             margin-bottom: 26px;
-            label {
-                color: #312E2E;
-                font-size: 36px;
+            .form-label {
+                color: $gray;
+                font-weight: bold;
+                font-size: 30px;
             }
             input {
                 width: 100%;
@@ -41,6 +51,21 @@
                 border: none;
                 border-radius: 5px;
             }
+
+            textarea {
+                border: none;
+                border-radius: 5px;
+            }
         }
+    }
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to {
+        opacity: 1;
     }
 }
