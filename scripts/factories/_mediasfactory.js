@@ -1,5 +1,3 @@
-//2 constructor avec une fonction statique qui permettent de recup le infos du json et une fonction statique pour prep le rendu html
-
 export class VideoMediaFactory {
   constructor(media) {
     this._id = media.id
@@ -13,27 +11,27 @@ export class VideoMediaFactory {
 
   get id() {
     return this._id
-}
+  }
 
-get photographerId(){
-  return this._photographerId
-}
+  get photographerId() {
+    return this._photographerId
+  }
 
-get title() {
-  return this._title
-}
+  get title() {
+    return this._title
+  }
 
-get likes() {
-  return this._likes
-}
+  get likes() {
+    return this._likes
+  }
 
-get date() {
-  return this._date
-}
+  get date() {
+    return this._date
+  }
 
-get price() {
-  return this._price
-}
+  get price() {
+    return this._price
+  }
 
   get renderVideo() {
     return `
@@ -47,7 +45,7 @@ get price() {
         </svg>`
   }
 }
-        
+
 export class ImageMediaFactory {
   constructor(media) {
     // console.log("image")
@@ -63,28 +61,28 @@ export class ImageMediaFactory {
 
   get id() {
     return this._id
-}
+  }
 
-get photographerId(){
-  return this._photographerId
-}
+  get photographerId() {
+    return this._photographerId
+  }
 
-get title() {
-  return this._title
-}
+  get title() {
+    return this._title
+  }
 
-get likes() {
-  return this._likes
-}
+  get likes() {
+    return this._likes
+  }
 
-get date() {
-  return this._date
-}
+  get date() {
+    return this._date
+  }
 
-get price() {
-  return this._price
-}
-  
+  get price() {
+    return this._price
+  }
+
   get renderImage() {
     return `   
       <img class="picture" src="assets/images/photographers/${this._photographerId}/media/${this._image}" alt="${this._title}">`

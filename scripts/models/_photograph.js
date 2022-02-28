@@ -60,13 +60,11 @@ export class Photograph extends Api {
           <p class="location">${photograph.city}, ${photograph.country}</p>
           <p class="tagline">${photograph.tagline}</p>
         </div>
-      </div>
+        <button class="contact_button" id="contactBtn">Contactez-moi</button>
+        <img class="img-profile" src="assets/images/photographers/${photograph.id}/${photograph.portrait}" alt="">
+        </div>
       
-      <button class="contact_button">Contactez-moi</button>
-
-      <img class="img-profile" src="assets/images/photographers/${photograph.id}/${photograph.portrait}" alt="">
-      
-      <div class="contactModal" id="contactModal">
+      <div class="modal-open" id="contactModal">
         <div class="content">
             <div class="headerModal">
               <div class="title">

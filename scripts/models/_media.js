@@ -38,7 +38,7 @@ export class Media extends Api {
 
 
   renderOneMedia(media) {
-    console.log(media)
+    // console.log(media)
       return `<article class="mediaContentCard">
       <div class="mediaCard" media-id=${media._id}>
       ${media._image?media.renderImage:media.renderVideo}

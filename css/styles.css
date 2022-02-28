@@ -9,7 +9,8 @@ body {
   font-family: "DM Sans", sans-serif;
   margin: 0;
 }
-body .overflow {
+
+.overflow {
   overflow: hidden;
 }
 
@@ -181,10 +182,6 @@ header h1 {
   color: #525252;
 }
 
-#contactModal {
-  display: none;
-}
-
 main {
   margin: 0 100px;
   display: flex;
@@ -192,10 +189,12 @@ main {
   align-items: center;
 }
 main section.photographer {
+  width: 100%;
+}
+main section.photographer .photographer-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   height: 300px;
   padding: 0 35px;
   background: #FAFAFA;
@@ -208,9 +207,6 @@ main section.photographer .photographer-header .locationandtag .location {
   padding: 10px 0;
   color: #901C1C;
   font-size: 1.75rem;
-}
-main section.photographer .photographer-header .modal-open .contactModal {
-  display: block;
 }
 main section.photographer .photographer-header .contactModal {
   display: none;
@@ -328,19 +324,29 @@ main section.portfolio .galleryContainer article {
 }
 main section.portfolio .galleryContainer article .mediaCard {
   border-radius: 5px;
+  cursor: pointer;
+}
+main section.portfolio .galleryContainer article .mediaCard img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 350px;
   height: 300px;
-  cursor: pointer;
+}
+main section.portfolio .galleryContainer article .mediaCard video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 350px;
+  height: 300px;
 }
 main section.portfolio .galleryContainer article .mediaIcon {
   position: absolute;
   color: #D3573C;
+  z-index: -1;
   opacity: 0.7;
   height: 36px;
   font-size: 1.5rem;
   top: 35%;
+  left: 50%;
 }
 main section.portfolio .galleryContainer article .media-legend {
   display: flex;
