@@ -56,7 +56,7 @@ export class Media extends Api {
         </div>
       </div>
     </article>
-    <div class="ligthbox">
+    <div class="ligthbox" arial-label="image closeup view" role="dialog">
     <button class="lightbox__close">close</button>
     <button class="lightbox__next">next</button>
     <button class="lightbox__prev">previous</button>
