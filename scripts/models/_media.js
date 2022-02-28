@@ -40,14 +40,13 @@ export class Media extends Api {
   renderOneMedia(media) {
     console.log(media)
       return `<article class="mediaContentCard">
-      <div class="mediaCard" media-id=${media.id}>
-
-      
+      <div class="mediaCard" media-id=${media._id}>
+      ${media._image?media.renderImage:media.renderVideo}
       </div>
       <div class="media-legend">
-        <p class="media-legend-title">${media.title}</p>
+        <p class="media-legend-title">${media._title}</p>
         <div class="media-legend-like" liked="no" data-media-id="5234343">
-          <span class="media-legend-cunt" id="like-cunt">${media.likes}</span>
+          <span class="media-legend-cunt" id="like-cunt">${media._likes}</span>
           <svg class="hearth" aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart" role="img"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
             <path fill="currentColor"
