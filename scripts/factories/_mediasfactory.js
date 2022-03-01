@@ -100,18 +100,20 @@ export class lightbox {
     this._photographerId = media.photographerId
     this._title = media.title
     this._image = media.image
+    this._video = media.video
     this._likes = media.likes
     this._date = media.date
     this._price = media.price
   }
 
   get lightboxSlides(){
-    return `<div class="ligthbox">
+    return `<div class="ligthbox" arial-label="image closeup view" role="dialog">
     <button class="lightbox__close">close</button>
     <button class="lightbox__next">next</button>
     <button class="lightbox__prev">previous</button>
-    <div class="lightbox__container">
-      <img src="" alt="">
+    <div class="lightbox__container" media-id="${this._id}>
+    ${media._image?media.renderImage:media.renderVideo}
+    <p class="titleImg">${this._title}</p>
     </div>
   </div>`
 

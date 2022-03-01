@@ -3,7 +3,7 @@
 // DOM Elements
 
 let name = document.querySelector('h1').textContent
-let modal = document.querySelector('#modal')
+let modal = document.querySelector('#contactModal')
 let openModalBtn = document.querySelector('#contactBtn')
 let closeModalBtn = document.querySelectorAll('.closeModal')
 

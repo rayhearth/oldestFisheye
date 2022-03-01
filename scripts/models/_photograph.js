@@ -55,11 +55,13 @@ export class Photograph extends Api {
   //Render photographProfileHeader
   renderPhotographHeader(photograph) {
     return ` <div class="photographer-header">
-        <h1>${photograph.name}</h1>
-        <div class="locationandtag">
-          <p class="location">${photograph.city}, ${photograph.country}</p>
-          <p class="tagline">${photograph.tagline}</p>
-        </div>
+    <div class="infosPhotographer">
+    <h1>${photograph.name}</h1>
+    <div class="locationandtag">
+      <p class="location">${photograph.city}, ${photograph.country}</p>
+      <p class="tagline">${photograph.tagline}</p>
+    </div>
+    </div>
         <button class="contact_button" id="contactBtn">Contactez-moi</button>
         <img class="img-profile" src="assets/images/photographers/${photograph.id}/${photograph.portrait}" alt="">
         </div>
