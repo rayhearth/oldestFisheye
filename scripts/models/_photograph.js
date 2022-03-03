@@ -53,6 +53,7 @@ export class Photograph extends Api {
       console.log(Onephotograph)
       //on instancie notre factory pour recuperer le html et on lui passe notre methode getPhotograph(id)
       let photographerprofile = new PhotographerPageFactory(Onephotograph)
+      console.log(photographerprofile)
       //on cree notre render en lui passant notre photograph profile et on appelle notre methode
       let renderProfile = photographerprofile.renderPhotographHeader
       // on retourne notre render final avec toutes les infos necessaires

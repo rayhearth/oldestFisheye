@@ -91,7 +91,7 @@ export class PhotographerPageFactory {
         <img class="img-profile" src="assets/images/photographers/${this._id}/${this._portrait}" alt="">
         </div>
       
-      <div class="contactModal modal-open" id="contactModal">
+      <div class="contactModal" id="contactModal">
         <div class="content">
             <div class="headerModal">
               <div class="title">
