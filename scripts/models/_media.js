@@ -13,6 +13,7 @@ export class Media extends Api {
 
       // let renderPicture = [...renderImage,...renderVideo]
       let renderPicture = medias.map(media => {
+        // console.log(media)
         if (media.hasOwnProperty("image")){
           return new ImageMediaFactory (media)
         } else {

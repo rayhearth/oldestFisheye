@@ -8,6 +8,8 @@ export class Photograph extends Api {
     try {
       /*on se met en attente des informations de note class API*/
       let photographs = await this.get()
+      let renderProfile = 
+      console.log(photographs)
       /*on retourne notre render*/
       return this.renderAllPhotograph(photographs)
     } catch (err) {
