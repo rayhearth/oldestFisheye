@@ -8,19 +8,24 @@ export class Media extends Api {
   /*méthode pour récupérer tous les médias*/
   async getAllMedia(photographerId) {
     try {
+      //on reste en attente de la fonction getMediaApi
       let medias = await this.getMediaApi(photographerId)
       // console.log(medias)
 
       // let renderPicture = [...renderImage,...renderVideo]
+      //On declare render picture qui va parcourir notre array obtenu via getMediaApi 
       let renderPicture = medias.map(media => {
+        //pour chaque media
         // console.log(media)
         if (media.hasOwnProperty("image")){
+          //si le media a pour nom "image" alors il va nous retourner notre ImageMediaFactory
           return new ImageMediaFactory (media)
         } else {
+          //sinon il nous retourne notre VideoMediaFactory
           return new VideoMediaFactory(media)
         }
       })
-
+//lorsque nous retournons la methode renderAllMedia on lui transmet notre renderPicture
       return this.renderAllMedia(renderPicture)
     } catch (err) {
       console.log(err)
