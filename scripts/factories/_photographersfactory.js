@@ -9,28 +9,6 @@ export class PhotographersIndexFactory {
         this._portrait = photographers.portrait
     }
     
-    // get name(){
-    //     return this._name
-    // }
-    // get id(){
-    //     return this._id
-    // }
-    // get city(){
-    //     return this._city
-    // }
-    // get country(){
-    //     return this._country
-    // }
-    // get tagline(){
-    //     return this._tagline
-    // }
-    // get price(){
-    //     return this._price
-    // }
-    // get portrait(){
-    //     return this._portrait
-    // }
-
     get renderOnePhotographer() {
         return `<article class="photographer-card">
             <a href="photographer.html?id=${this._id}">
@@ -45,38 +23,17 @@ export class PhotographersIndexFactory {
 }
 
 export class PhotographerPageFactory {
-    constructor(photographers) {
-        this._name = photographers.name
-        this._id = photographers.id
-        this._city = photographers.city
-        this._country = photographers.country
-        this._tagline = photographers.tagline
-        this._price = photographers.price
-        this._portrait = photographers.portrait
+    constructor(photographer) {
+      // console.log(photographer)
+        this._name = photographer.name
+        this._id = photographer.id
+        this._city = photographer.city
+        this._country = photographer.country
+        this._tagline = photographer.tagline
+        this._price = photographer.price
+        this._portrait = photographer.portrait
     }
     
-    // get name(){
-    //     return this._name
-    // }
-
-    // get id(){
-    //     return this._id
-    // }
-    // get city(){
-    //     return this._city
-    // }
-    // get country(){
-    //     return this._country
-    // }
-    // get tagline(){
-    //     return this._tagline
-    // }
-    // get price(){
-    //     return this._price
-    // }
-    // get portrait(){
-    //     return this._portrait
-    // }
     get renderPhotographHeader(){
         return ` <div class="photographer-header" aria-label="photographer profile of ${this._name}">
     <div class="infosPhotographer">
