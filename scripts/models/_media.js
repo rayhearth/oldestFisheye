@@ -25,6 +25,7 @@ export class Media extends Api {
           return new VideoMediaFactory(media)
         }
       })
+//instance de la class ligthbox 
 //lorsque nous retournons la methode renderAllMedia on lui transmet notre renderPicture
       return this.renderAllMedia(renderPicture)
     } catch (err) {
@@ -35,8 +36,9 @@ export class Media extends Api {
   renderAllMedia(medias) {
     let all = ''
     for (let media of medias) {
-      all += this.renderOneMedia(media)
+      all += this.renderOneMedia(media,)
     }
+    //ajout du rendu lightbox slide
     return all
   }
 
