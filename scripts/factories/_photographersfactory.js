@@ -9,28 +9,27 @@ export class PhotographersIndexFactory {
         this._portrait = photographers.portrait
     }
     
-    get name(){
-        return this._name
-    }
-
-    get id(){
-        return this._id
-    }
-    get city(){
-        return this._city
-    }
-    get country(){
-        return this._country
-    }
-    get tagline(){
-        return this._tagline
-    }
-    get price(){
-        return this._price
-    }
-    get portrait(){
-        return this._portrait
-    }
+    // get name(){
+    //     return this._name
+    // }
+    // get id(){
+    //     return this._id
+    // }
+    // get city(){
+    //     return this._city
+    // }
+    // get country(){
+    //     return this._country
+    // }
+    // get tagline(){
+    //     return this._tagline
+    // }
+    // get price(){
+    //     return this._price
+    // }
+    // get portrait(){
+    //     return this._portrait
+    // }
 
     get renderOnePhotographer() {
         return `<article class="photographer-card">
@@ -56,28 +55,28 @@ export class PhotographerPageFactory {
         this._portrait = photographers.portrait
     }
     
-    get name(){
-        return this._name
-    }
+    // get name(){
+    //     return this._name
+    // }
 
-    get id(){
-        return this._id
-    }
-    get city(){
-        return this._city
-    }
-    get country(){
-        return this._country
-    }
-    get tagline(){
-        return this._tagline
-    }
-    get price(){
-        return this._price
-    }
-    get portrait(){
-        return this._portrait
-    }
+    // get id(){
+    //     return this._id
+    // }
+    // get city(){
+    //     return this._city
+    // }
+    // get country(){
+    //     return this._country
+    // }
+    // get tagline(){
+    //     return this._tagline
+    // }
+    // get price(){
+    //     return this._price
+    // }
+    // get portrait(){
+    //     return this._portrait
+    // }
     get renderPhotographHeader(){
         return ` <div class="photographer-header" aria-label="photographer profile of ${this._name}">
     <div class="infosPhotographer">

@@ -297,19 +297,13 @@ main section.portfolio .galleryContainer article .mediaCard {
   border-radius: 5px;
   cursor: pointer;
 }
-main section.portfolio .galleryContainer article .mediaCard img {
+main section.portfolio .galleryContainer article .mediaCard img, main section.portfolio .galleryContainer article .mediaCard video {
   -o-object-fit: cover;
      object-fit: cover;
   width: 350px;
   height: 300px;
 }
-main section.portfolio .galleryContainer article .mediaCard video {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 350px;
-  height: 300px;
-}
-main section.portfolio .galleryContainer article .mediaIcon {
+main section.portfolio .galleryContainer article .mediaCard svg {
   position: absolute;
   color: #D3573C;
   z-index: -1;
@@ -322,7 +316,8 @@ main section.portfolio .galleryContainer article .mediaIcon {
 main section.portfolio .galleryContainer article .media-legend {
   display: flex;
   justify-content: space-between;
-  padding: 5px 0;
+  align-items: center;
+  width: 100%;
   max-width: 350px;
   height: 70px;
   color: #901C1C;

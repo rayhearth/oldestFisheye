@@ -9,17 +9,17 @@ export class VideoMediaFactory {
     this._price = media.price
   }
 
-  get id() {
-    return this._id
-  }
+  // get id() {
+  //   return this._id
+  // }
 
-  get photographerId() {
-    return this._photographerId
-  }
+  // get photographerId() {
+  //   return this._photographerId
+  // }
 
-  get title() {
-    return this._title
-  }
+  // get title() {
+  //   return this._title
+  // }
 
   get likes() {
     return this._likes
