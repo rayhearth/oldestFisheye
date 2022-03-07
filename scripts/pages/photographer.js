@@ -1,5 +1,5 @@
 import { PhotographFactory } from '../factories/_photographFactory.js'
-import { MediaFactory } from '../factories/_media.js'
+import { MediaFactory } from '../factories/_mediaFactory.js'
 
 // let data = new Photograph()
 
