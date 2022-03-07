@@ -19,7 +19,7 @@ export class MediaFactory extends Api {
         // console.log(media)
         if (media.hasOwnProperty("image")){
           //si le media a pour nom "image" alors il va nous retourner notre ImageMediaFactory
-          return new ImageMediaCards (media)
+          return new ImageMediaCards(media)
         } else {
           //sinon il nous retourne notre VideoMediaFactory
           return new VideoMediaCards(media)
@@ -36,7 +36,7 @@ export class MediaFactory extends Api {
   renderAllMedia(medias) {
     let all = ''
     for (let media of medias) {
-      all += this.renderOneMedia(media,)
+      all += this.renderOneMedia(media)
     }
     //ajout du rendu lightbox slide
     return all
