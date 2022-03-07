@@ -1,4 +1,4 @@
-export class PhotographersIndexFactory {
+export class PhotographersIndexCards {
     constructor(photographers) {
         this._name = photographers.name
         this._id = photographers.id
@@ -22,7 +22,7 @@ export class PhotographersIndexFactory {
     }
 }
 
-export class PhotographerPageFactory {
+export class PhotographerPageCards {
     constructor(photographer) {
       // console.log(photographer)
         this._name = photographer.name

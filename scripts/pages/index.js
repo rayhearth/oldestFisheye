@@ -1,4 +1,4 @@
-import { Photograph } from '../models/_photograph.js'
+import { PhotographFactory } from '../factories/_photographFactory.js'
 
 
 /*j'implémente ma méthode pour récup et afficher tout mes photographes*/
@@ -6,7 +6,7 @@ import { Photograph } from '../models/_photograph.js'
 let displayAllPhotograph = async () => {
 
     // instance de photographe par la class Photograph() on recupère nos photographes 
-    let photograph = new Photograph()
+    let photograph = new PhotographFactory()
     let allPhotographs = await photograph.getAllPhotograph()
 
     // on implemente la méthode allPhotographs ds la section ayant l'id '#photographer

@@ -1,5 +1,5 @@
-import { Photograph } from '../models/_photograph.js'
-import { Media } from '../models/_media.js'
+import { PhotographFactory } from '../factories/_photographFactory.js'
+import { MediaFactory } from '../factories/_media.js'
 
 // let data = new Photograph()
 
@@ -12,7 +12,7 @@ const urlId = urlParams.get('id')
 let displayOnePhotograph = async () => {
 
 
-    let photograph = new Photograph()
+    let photograph = new PhotographFactory()
     let OnePhotograph = await photograph.getOnePhotograph(urlId)
 
     document.querySelector('#photographer').innerHTML = OnePhotograph
@@ -24,7 +24,7 @@ window.addEventListener('load', displayOnePhotograph())
 let displayAllMedia = async () => {
 
     
-    let media = new Media()
+    let media = new MediaFactory()
     let AllMedias = await media.getAllMedia(urlId)
 
     document.querySelector('.galleryContainer').innerHTML = AllMedias

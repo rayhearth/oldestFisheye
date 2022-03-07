@@ -1,4 +1,4 @@
-export class VideoMediaFactory {
+export class VideoMediaCards {
   constructor(media) {
     this._id = media.id
     this._photographerId = media.photographerId
@@ -46,7 +46,7 @@ export class VideoMediaFactory {
   }
 }
 
-export class ImageMediaFactory {
+export class ImageMediaCards {
   constructor(media) {
     // console.log("image")
     // console.log(media)

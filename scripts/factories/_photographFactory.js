@@ -1,8 +1,8 @@
 import { Api } from '../api/_api.js'
-import { PhotographerPageFactory, PhotographersIndexFactory } from '../factories/_photographersfactory.js';
+import { PhotographerPageCards, PhotographersIndexCards } from '../models/_photographersCards.js';
 
 /*ma class Photograph hérite de ma class Api*/
-export class Photograph extends Api {
+export class PhotographFactory extends Api {
 
   /*méthode pour recupérer tous les photographes*/
   async getAllPhotograph() {
@@ -52,7 +52,7 @@ export class Photograph extends Api {
       let Onephotograph = await this.getPhotograph(id)
       console.log(Onephotograph)
       //on instancie notre factory pour recuperer le html et on lui passe notre methode getPhotograph(id)
-      let photographerprofile = new PhotographerPageFactory(Onephotograph)
+      let photographerprofile = new PhotographerPageCards(Onephotograph)
       console.log(photographerprofile)
       //on cree notre render en lui passant notre photograph profile et on appelle notre methode
       let renderProfile = photographerprofile.renderPhotographHeader

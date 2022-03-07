@@ -1,8 +1,8 @@
 import { Api } from '../api/_api.js'
-import { VideoMediaFactory , ImageMediaFactory } from '../factories/_mediasfactory.js'
+import { VideoMediaCards , ImageMediaCards } from '../models/_mediasCards.js'
 
 
-export class Media extends Api {
+export class MediaFactory extends Api {
 
 
   /*méthode pour récupérer tous les médias*/
@@ -19,10 +19,10 @@ export class Media extends Api {
         // console.log(media)
         if (media.hasOwnProperty("image")){
           //si le media a pour nom "image" alors il va nous retourner notre ImageMediaFactory
-          return new ImageMediaFactory (media)
+          return new ImageMediaCards (media)
         } else {
           //sinon il nous retourne notre VideoMediaFactory
-          return new VideoMediaFactory(media)
+          return new VideoMediaCards(media)
         }
       })
 //instance de la class ligthbox 
