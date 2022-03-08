@@ -1,16 +1,17 @@
 export class PhotographersIndexCards {
-    constructor(photographers) {
-        this._name = photographers.name
-        this._id = photographers.id
-        this._city = photographers.city
-        this._country = photographers.country
-        this._tagline = photographers.tagline
-        this._price = photographers.price
-        this._portrait = photographers.portrait
-    }
-    
-    get renderOnePhotographer() {
-        return `<article class="photographer-card">
+  constructor(photographers) {
+    console.log(photographers)
+    this._name = photographers.name
+    this._id = photographers.id
+    this._city = photographers.city
+    this._country = photographers.country
+    this._tagline = photographers.tagline
+    this._price = photographers.price
+    this._portrait = photographers.portrait
+  }
+
+  get renderOnePhotographer() {
+    return `<article class="photographer-card">
             <a href="photographer.html?id=${this._id}">
                 <img class="img-profile" src="assets/images/photographers/${this._id}/${this._portrait}" alt="${this._name}">
                 <h2 class="photographer-name">${this._name}</h2>
@@ -19,23 +20,32 @@ export class PhotographersIndexCards {
             <p class="photographer-tagline">${this._tagline}</p>
             <p class="photographer-price">${this._price}€/jour</p>
         </article>`
+  }
+
+  get renderAllPhotograph() {
+    let all = ''
+    for (let photograph of photographs) {
+      all += this.renderOnePhotographer(photograph)
     }
+    return all
+  }
 }
 
+
 export class PhotographerPageCards {
-    constructor(photographer) {
-      // console.log(photographer)
-        this._name = photographer.name
-        this._id = photographer.id
-        this._city = photographer.city
-        this._country = photographer.country
-        this._tagline = photographer.tagline
-        this._price = photographer.price
-        this._portrait = photographer.portrait
-    }
-    
-    get renderPhotographHeader(){
-        return ` <div class="photographer-header" aria-label="photographer profile of ${this._name}">
+  constructor(photographer) {
+    // console.log(photographer)
+    this._name = photographer.name
+    this._id = photographer.id
+    this._city = photographer.city
+    this._country = photographer.country
+    this._tagline = photographer.tagline
+    this._price = photographer.price
+    this._portrait = photographer.portrait
+  }
+
+  get renderPhotographHeader() {
+    return ` <div class="photographer-header" aria-label="photographer profile of ${this._name}">
     <div class="infosPhotographer">
     <h1>${this._name}</h1>
     <div class="locationandtag">
@@ -80,6 +90,6 @@ export class PhotographerPageCards {
         </div>
       </div>
     </div>`
-    }
+  }
 }
 

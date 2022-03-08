@@ -9,12 +9,19 @@ export class PhotographFactory extends Api {
     try {
       /*on se met en attente des informations de note class API*/
       let photographs = await this.get()
+      let photographerProfile = new PhotographersIndexCards(photographs)
+      // console.log(photographerProfile)
+      let renderPhotographer = photographerProfile.renderOnePhotographer
+      // console.log(renderPhotographer)
+      let renderAllPhotograph = photographs.forEach(element => {
+      return renderPhotographer        
+      });
       // let renderProfile = photographs.forEach(photographers => {
       //   return new PhotographersIndexFactory
       // });
-      console.log(photographs)
+      console.log(renderProfile)
       /*on retourne notre render*/
-      return this.renderAllPhotograph(photographs)
+      // return renderAllPhotograph
     } catch (err) {
       console.log(err)
     }
@@ -52,10 +59,10 @@ export class PhotographFactory extends Api {
       let Onephotograph = await this.getPhotograph(id)
       console.log(Onephotograph)
       //on instancie notre factory pour recuperer le html et on lui passe notre methode getPhotograph(id)
-      let photographerprofile = new PhotographerPageCards(Onephotograph)
-      console.log(photographerprofile)
+      let photographerProfile = new PhotographerPageCards(Onephotograph)
+      console.log(photographerProfile)
       //on cree notre render en lui passant notre photograph profile et on appelle notre methode
-      let renderProfile = photographerprofile.renderPhotographHeader
+      let renderProfile = photographerProfile.renderPhotographHeader
       // on retourne notre render final avec toutes les infos necessaires
       return renderProfile
     } catch (err) {
