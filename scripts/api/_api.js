@@ -5,10 +5,7 @@ export class Api {
     async get() {
         return fetch(this.url)
             .then(res => res.json())
-            .then(res => {
-                let b = res.photographers
-                return b[0]
-            })
+            .then(res => res.photographers)
             .catch(err => console.log('an error occurs', err))
     }
 

@@ -11,7 +11,6 @@ export class MediaFactory extends Api {
       //on reste en attente de la fonction getMediaApi
       let medias = await this.getMediaApi(photographerId)
       // console.log(medias)
-
       // let renderPicture = [...renderImage,...renderVideo]
       //On declare render picture qui va parcourir notre array obtenu via getMediaApi 
       let renderPicture = medias.map(media => {
@@ -25,6 +24,7 @@ export class MediaFactory extends Api {
           return new VideoMediaCards(media)
         }
       })
+
 //instance de la class ligthbox 
 //lorsque nous retournons la methode renderAllMedia on lui transmet notre renderPicture
       return this.renderAllMedia(renderPicture)

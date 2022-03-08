@@ -21,14 +21,6 @@ export class PhotographersIndexCards {
             <p class="photographer-price">${this._price}€/jour</p>
         </article>`
   }
-
-  get renderAllPhotograph() {
-    let all = ''
-    for (let photograph of photographs) {
-      all += this.renderOnePhotographer(photograph)
-    }
-    return all
-  }
 }
 
 
