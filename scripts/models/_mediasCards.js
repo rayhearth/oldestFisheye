@@ -94,17 +94,25 @@ export class lightbox {
     this._price = media.price
   }
 
-  get lightboxSlides(){
-    return `<div class="ligthbox" arial-label="image closeup view" role="dialog">
-    <button class="lightbox__close">close</button>
-    <button class="lightbox__next">next</button>
-    <button class="lightbox__prev">previous</button>
-    <div class="lightbox__container" media-id="${this._id}>
-    ${media._image?media.renderImage:media.renderVideo}
-    <p class="titleImg">${this._title}</p>
+  static init() {
+    const links = document.querySelectorAll(".mediaLink")
+
+      .forEach(link => link.addEventListener('click', e => {
+        e.preventDefault()
+        new lightbox(e.currentTarget.getAttribute(this._id))
+      }))
+  }
+
+  get lightboxSlide() {
+    return `<div class="ligthbox" id="ligthbox" arial-label="image closeup view" role="dialog">
+    <div class="lightbox__close lightbox-button" aria-label="fermer"></div>
+    <div class="lightbox__next lightbox-button" aria-label="next media"></div>
+    <div class="lightbox__prev lightbox-button" aria-label="previous media"></div>
+    <div class="lightbox__container" media-id="${this._id}">
+    ${media._image ? media.renderImage : media.renderVideo}
+    <p class="titleImg" tabindex="0" aria-label="${this._title}">${this._title}</p>
     </div>
   </div>`
-
   }
-  
+
 }

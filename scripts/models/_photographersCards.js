@@ -10,7 +10,7 @@ export class PhotographersIndexCards {
     this._portrait = photographers.portrait
   }
 
-  get renderOnePhotographer() {
+  renderOnePhotographer() {
     return `<article class="photographer-card">
             <a href="photographer.html?id=${this._id}">
                 <img class="img-profile" src="assets/images/photographers/${this._id}/${this._portrait}" alt="${this._name}">
