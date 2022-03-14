@@ -43,11 +43,10 @@ export class PhotographFactory extends Api {
       let renderProfile = photographerprofile.renderPhotographHeader
       // on retourne notre render final avec toutes les infos necessaires
       return renderProfile
+
+      
     } catch (err) {
       console.log(err)
     }
   }
-
-
-
 }
