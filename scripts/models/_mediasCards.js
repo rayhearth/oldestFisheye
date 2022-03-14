@@ -9,19 +9,7 @@ export class VideoMediaCards {
     this._price = media.price
   }
 
-  get likes() {
-    return this._likes
-  }
-
-  get date() {
-    return this._date
-  }
-
-  get price() {
-    return this._price
-  }
-
-  get renderVideo() {
+  renderVideo() {
     return `
       <video class="picture" media-id=${this._id} poster="">
         <source src="assets/images/photographers/${this._photographerId}/media/${this._video}"type="video/mp4"></video>
@@ -47,31 +35,8 @@ export class ImageMediaCards {
     this._price = media.price
   }
 
-  get id() {
-    return this._id
-  }
 
-  get photographerId() {
-    return this._photographerId
-  }
-
-  get title() {
-    return this._title
-  }
-
-  get likes() {
-    return this._likes
-  }
-
-  get date() {
-    return this._date
-  }
-
-  get price() {
-    return this._price
-  }
-
-  get renderImage() {
+  renderImage() {
     return `   
       <img role="button" class="picture" src="assets/images/photographers/${this._photographerId}/media/${this._image}" alt="${this._title}">`
   }

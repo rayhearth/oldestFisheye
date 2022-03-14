@@ -1,5 +1,5 @@
 import { Api } from '../api/_api.js'
-import { VideoMediaCards , ImageMediaCards, lightbox } from '../models/_mediasCards.js'
+import { VideoMediaCards , ImageMediaCards } from '../models/_mediasCards.js'
 
 
 export class MediaFactory extends Api {
@@ -49,7 +49,7 @@ export class MediaFactory extends Api {
     // console.log(media)
       return `<article class="mediaContentCard">
       <div class="mediaCard mediaLink" media-id=${media._id}>
-      ${media._image?media.renderImage:media.renderVideo}
+      ${media._image?media.renderImage():media.renderVideo()}
       </div>
       <div class="media-legend">
         <p class="media-legend-title">${media._title}</p>
