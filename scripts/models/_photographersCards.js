@@ -36,7 +36,7 @@ export class PhotographerPageCards {
     this._portrait = photographer.portrait
   }
 
-  get renderPhotographHeader() {
+  renderPhotographHeader() {
     return `<div class="photographer-header" aria-label="photographer profile of ${this._name}">
     <div class="infosPhotographer">
     <h1>${this._name}</h1>

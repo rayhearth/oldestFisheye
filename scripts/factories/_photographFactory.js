@@ -40,11 +40,11 @@ export class PhotographFactory extends Api {
       let photographerprofile = new PhotographerPageCards(Onephotograph)
       console.log(photographerprofile)
       //on cree notre render en lui passant notre photograph profile et on appelle notre methode
-      let renderProfile = photographerprofile.renderPhotographHeader
+      let renderProfile = photographerprofile.renderPhotographHeader()
       // on retourne notre render final avec toutes les infos necessaires
       return renderProfile
 
-      
+
     } catch (err) {
       console.log(err)
     }
