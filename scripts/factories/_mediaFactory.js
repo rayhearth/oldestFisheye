@@ -24,8 +24,6 @@ export class MediaFactory extends Api {
           return new VideoMediaCards(media)
         }
       })
-      let lightbox1 = new lightbox(medias)
-      let slide = ligthbox.ligthboxSlide
 //instance de la class ligthbox 
 //lorsque nous retournons la methode renderAllMedia on lui transmet notre renderPicture
       return this.renderAllMedia(renderPicture)

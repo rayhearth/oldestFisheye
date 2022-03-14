@@ -37,7 +37,7 @@ export class PhotographerPageCards {
   }
 
   get renderPhotographHeader() {
-    return ` <div class="photographer-header" aria-label="photographer profile of ${this._name}">
+    return `<div class="photographer-header" aria-label="photographer profile of ${this._name}">
     <div class="infosPhotographer">
     <h1>${this._name}</h1>
     <div class="locationandtag">
@@ -47,7 +47,7 @@ export class PhotographerPageCards {
     </div>
         <button class="contact_button" id="contactBtn" aria-labelleby="photographer contact ${this._name}">Contactez-moi</button>
         <img class="img-profile" src="assets/images/photographers/${this._id}/${this._portrait}" alt="">
-        </div>
+    </div>
       
       <div class="contactModal" id="contactModal">
         <div class="content">

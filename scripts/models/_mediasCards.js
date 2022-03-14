@@ -94,15 +94,6 @@ export class lightbox {
     this._price = media.price
   }
 
-  static init() {
-    const links = document.querySelectorAll(".mediaLink")
-
-      .forEach(link => link.addEventListener('click', e => {
-        e.preventDefault()
-        new lightbox(e.currentTarget.getAttribute(this._id))
-      }))
-  }
-
   get lightboxSlide() {
     return `<div class="ligthbox" id="ligthbox" arial-label="image closeup view" role="dialog">
     <div class="lightbox__close lightbox-button" aria-label="fermer"></div>
