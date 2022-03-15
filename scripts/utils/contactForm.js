@@ -1,11 +1,9 @@
-
-
 // DOM Elements
 
 // let name = document.querySelector('h1').textContent
 
 let modal = document.querySelector('#contactModal')
-let openModalBtn = document.querySelector('#modal-open')
+let openModalBtn = document.querySelector('#openModal')
 let closeModalBtn = document.querySelectorAll('.closeModal')
 
 let form = document.forms['contactForm']
@@ -37,7 +35,7 @@ function closeModal() {
 /*listener Modal*/
 
 /*Open Modal*/
-openModalBtn.addEventListener("click",openModal)
+openModalBtn.addEventListener("click", openModal)
 
 /*close Modal*/
 closeModalBtn.forEach(el => {
