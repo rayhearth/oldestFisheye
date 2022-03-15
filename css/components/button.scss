@@ -1,4 +1,4 @@
-#contactBtn {
+.contactBtn {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -8,6 +8,7 @@
     border: none;
     background-color: $red;
     border-radius: 5px;
+    margin: 20px 0;
     cursor: pointer;
     transition: all .3s;
     &:hover{

@@ -45,40 +45,44 @@ export class PhotographerPageCards {
       <p class="tagline">${this._tagline}</p>
     </div>
     </div>
-        <button class="contact_button" id="contactBtn" aria-labelleby="photographer contact ${this._name}">Contactez-moi</button>
+        <button class="contactBtn" id="modal-open" aria-labelleby="photographer contact ${this._name}">Contactez-moi</button>
         <img class="img-profile" src="assets/images/photographers/${this._id}/${this._portrait}" alt="">
     </div>
       
-      <div class="contactModal" id="contactModal">
+      <div class="contactModal" id="contactModal" role="dialog" aria-labelledby="contactModal-title" aria-hidden="true">
         <div class="content">
             <div class="headerModal">
               <div class="title">
                 <h2>Contactez-moi</h2>
                 <p class="photographerName">${this._name}</p>
               </div>
-              <div class="close closeModal" id="closeModal">
-                <svg class="svg-inline--fa fa-xmark contactCloseIcon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path></svg>
+              <div class="closeModal" id="closeModal" aria-label="closeModal" >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"/></svg>
               </div>
             </div>
           <form name="contactForm" id="contactForm">
             <div class="formData">
               <label class="form-label" for="firstName">Prénom</label>
-              <input class="form-control" type="text" id="first" name="firstName"/>
+              <input class="form-control" type="text" id="first" name="firstName" aria-labelledby="firstName"
+              aria-required="true"/>
             </div>
             <div class="formData">
               <label class="form-label" for="lastName">Nom</label>
-              <input class="form-control" type="text" id="last" name="lastName"/>
+              <input class="form-control" type="text" id="last" name="lastName" aria-labelledby="lastName"
+              aria-required="true"/>
             </div>
             <div class="formData">
               <label class="form-label" for="email">E-mail</label>
-              <input class="form-control" type="email" id="email" name="email"/>
+              <input class="form-control" type="email" id="email" name="email" aria-labelledby="email"
+              aria-required="true"/>
             </div>
             <div class="formData">
               <label class="form-label" for="textArea">Votre message</label>
-              <textarea name="contactTextArea" id="textContact" cols="30" rows="10"></textarea>
+              <textarea name="contactTextArea" id="textContact" cols="30" rows="10"  aria-labelledby="textContact"
+              aria-required="true"></textarea>
             </div>
           </form>
-          <button class="contact_button" type="submit">Envoyer</button>
+          <button class="contactBtn closeModal" type="submit" value="Envoyer">Envoyer</button>
         </div>
       </div>
     </div>`

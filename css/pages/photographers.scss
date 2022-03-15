@@ -1,6 +1,3 @@
-// #contactModal {
-//     display: none;
-// }
 
 main {
     margin: 0 100px;
@@ -16,7 +13,7 @@ main {
             height: 300px;
             padding: 0 35px;
             background: $lightgray;
-            .infosPhotographer{
+            .infosPhotographer {
                 h1 {
                     color: $red-light;
                     font-size: 2.25rem;
@@ -30,82 +27,6 @@ main {
                 }
             }
         }
-        .modal-open .contactModal {
-            display: block;
-        }
-        // .modal-open{
-        //     display: none;
-        //     position: fixed;
-        //     z-index: 1;
-        //     left: 0;
-        //     top: 0;
-        //     width: 100%;
-        //     height: 100%;
-        //     overflow: auto;
-        //     background-color: rgba(250, 250, 250, 0.7);
-        //     .content{
-        //         display: flex;
-        //         flex-direction: column;
-        //         justify-content: space-around;
-        //         margin: auto;
-        //         height: 900px;
-        //         width: 670px;
-        //         background-color: $pink;
-        //         padding: 20px;
-        //         border-radius: 5px;
-        //         overflow: hidden;
-        //         animation-name: modalopen;
-        //         animation-duration: 0.8s;
-        //         .headerModal{
-        //             display: flex;
-        //             justify-content: space-between;
-        //             .title{
-        //                 display: flex;
-        //                 flex-direction: column;
-        //                 font-size: 36px;
-        //             }
-        //             .closeModal{
-        //                 color: white;
-        //                 height: 36px;
-        //                 width: 36px;
-        //             }
-        //         }
-        //         form{
-        //             display: flex;
-        //             flex-direction: column;
-        //             justify-content: space-evenly;
-        //             .formData{
-        //                 display: flex;
-        //                 flex-direction: column;
-        //                 justify-content: space-between;
-        //                 gap: 10px;
-        //                 .form-label{
-        //                     font-size: 30px;
-        //                     font-weight: bold;
-        //                     color: $gray;
-        //                 }
-        //                 input{
-        //                     border: none;
-        //                     border-radius: 5px;
-        //                     height: 64px;
-        //                 }
-        //                 textarea{
-        //                     border: none;
-        //                     border-radius: 5px;
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
-        // @keyframes modalopen {
-        //     from {
-        //         opacity: 0;
-        //         transform: translateY(-150px);
-        //     }
-        //     to {
-        //         opacity: 1;
-        //     }
-        // }
     }
 
     section.portfolio {
@@ -141,7 +62,8 @@ main {
                 .mediaCard {
                     border-radius: 5px;
                     cursor: pointer;
-                    img , video {
+                    img,
+                    video {
                         object-fit: cover;
                         width: 350px;
                         height: 300px;
@@ -156,7 +78,6 @@ main {
                         top: 35%;
                         left: 50%;
                     }
-                    
                 }
                 .media-legend {
                     display: flex;

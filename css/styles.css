@@ -101,7 +101,7 @@ img.logo {
   font-size: 24ps;
 }
 
-#contactBtn {
+.contactBtn {
   font-size: 20px;
   font-weight: bold;
   color: white;
@@ -111,10 +111,11 @@ img.logo {
   border: none;
   background-color: #901C1C;
   border-radius: 5px;
+  margin: 20px 0;
   cursor: pointer;
   transition: all 0.3s;
 }
-#contactBtn:hover {
+.contactBtn:hover {
   background-color: #DB8876;
   border: 1px #901C1C;
 }
@@ -141,9 +142,8 @@ img.logo {
   border-radius: 5px;
   margin: auto;
   padding: 20px;
-  background-color: #D3573C;
+  background-color: #DB8876;
   width: 670px;
-  height: 900px;
   overflow: hidden;
   align-items: center;
   -webkit-animation-name: modalopen;
@@ -157,14 +157,19 @@ img.logo {
   width: 100%;
 }
 .contactModal .headerModal .title h2 {
-  font-size: 64px;
   font-weight: normal;
   text-align: center;
+  font-size: 64px;
+}
+.contactModal .headerModal .title p {
+  font-size: 64px;
 }
 .contactModal .headerModal .closeModal {
-  color: white;
   height: 36px;
   width: 36px;
+}
+.contactModal .headerModal .closeModal svg {
+  fill: white;
 }
 .contactModal form {
   display: flex;
@@ -180,19 +185,22 @@ img.logo {
   margin-bottom: 26px;
 }
 .contactModal form .formData .form-label {
-  color: #525252;
-  font-weight: bold;
-  font-size: 30px;
+  color: #312E2E;
+  font-weight: normal;
+  font-size: 36px;
 }
 .contactModal form .formData input {
   width: 100%;
   height: 68px;
   border: none;
   border-radius: 5px;
+  font-size: 30px;
 }
 .contactModal form .formData textarea {
+  height: 170px;
   border: none;
   border-radius: 5px;
+  font-size: 30px;
 }
 
 @-webkit-keyframes modalopen {
@@ -306,9 +314,6 @@ main section.photographer .photographer-header .infosPhotographer .locationandta
   color: #901C1C;
   font-size: 1.75rem;
 }
-main section.photographer .modal-open .contactModal {
-  display: block;
-}
 main section.portfolio {
   display: flex;
   flex-direction: column;
@@ -343,7 +348,8 @@ main section.portfolio .galleryContainer article .mediaCard {
   border-radius: 5px;
   cursor: pointer;
 }
-main section.portfolio .galleryContainer article .mediaCard img, main section.portfolio .galleryContainer article .mediaCard video {
+main section.portfolio .galleryContainer article .mediaCard img,
+main section.portfolio .galleryContainer article .mediaCard video {
   -o-object-fit: cover;
      object-fit: cover;
   width: 350px;
