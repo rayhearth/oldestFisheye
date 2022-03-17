@@ -1,5 +1,3 @@
-/* lightbox*/
-
 export class lightbox {
 
     constructor(media) {
@@ -32,7 +30,7 @@ export class lightbox {
     mediaClicked.addEventListener("click", event => {
       event.preventDefault();
       event.stopPropagation();
-      let mediaId = event.target.getAttribute("data-media-id");
+      let mediaId = event.target.getAttribute("media-id");
       medias.forEach(media => {
         if (media.id == mediaId) {
           getLightbox(media, mediaInLightbox, photographe);
