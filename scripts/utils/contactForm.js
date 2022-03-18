@@ -1,20 +1,19 @@
 // DOM Elements
 
-// let name = document.querySelector('h1').textContent
-
-let modal = document.querySelector('#contactModal')
-let openModalBtn = document.querySelector('#openModal')
 let closeModalBtn = document.querySelectorAll('.closeModal')
 
+console.log('azeaze')
 let form = document.forms['contactForm']
 
 /*Fonction Open Modal*/
 function openModal() {
+    let name = document.querySelector('h1').textContent
+    let modal = document.querySelector('#contactModal')
     document.body.classList.add('modal-open')
     // modal.style.display= "block"
     document.body.classList.add('overflow')
-    window.scrollTo(0, 0);
-    modal.scrollTo(0, 0);
+    window.scrollTo(0, 0)
+    modal.scrollTo(0, 0)
 
     modal.getAttribute("aria-hidden", "false")
 
@@ -35,7 +34,6 @@ function closeModal() {
 /*listener Modal*/
 
 /*Open Modal*/
-openModalBtn.addEventListener("click", openModal)
 
 /*close Modal*/
 closeModalBtn.forEach(el => {

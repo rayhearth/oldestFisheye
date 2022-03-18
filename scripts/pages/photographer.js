@@ -16,6 +16,8 @@ let displayOnePhotograph = async () => {
     let OnePhotograph = await photograph.getOnePhotograph(urlId)
 
     document.querySelector('#photographer').innerHTML = OnePhotograph
+    let openModalBtn = document.querySelector('#openModal')
+    openModalBtn.addEventListener("click", openModal)
 
 }
 
@@ -23,11 +25,11 @@ window.addEventListener('load', displayOnePhotograph())
 
 let displayAllMedia = async () => {
 
-    
+
     let media = new MediaFactory()
     let AllMedias = await media.getAllMedia(urlId)
 
     document.querySelector('.galleryContainer').innerHTML = AllMedias
 }
 
-window.addEventListener('load' , displayAllMedia())
+window.addEventListener('load', displayAllMedia())
