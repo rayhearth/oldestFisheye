@@ -16,8 +16,17 @@ let displayOnePhotograph = async () => {
     let OnePhotograph = await photograph.getOnePhotograph(urlId)
 
     document.querySelector('#photographer').innerHTML = OnePhotograph
+    
+    //on recupère le nom du photographe va le h1 et n l'injecte via l'id
+    let name = document.querySelector('h1').textContent
+    document.querySelector('#photographerName').innerHTML = name
+    // on déclare nos électeur et les events aprs le chargement de la methode getOnePhotograph
     let openModalBtn = document.querySelector('#openModal')
     openModalBtn.addEventListener("click", openModal)
+    let closeModalBtn = document.querySelectorAll('.closeModal')
+    closeModalBtn.forEach(el => {
+        el.addEventListener('click', closeModal)
+    })
 
 }
 
