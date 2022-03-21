@@ -20,9 +20,10 @@ let displayOnePhotograph = async () => {
     //on recupère le nom du photographe va le h1 et n l'injecte via l'id
     let name = document.querySelector('h1').textContent
     document.querySelector('#photographerName').innerHTML = name
-    // on déclare nos électeur et les events aprs le chargement de la methode getOnePhotograph
+    // on déclare nos sélecteurs et les events apres le chargement de la methode getOnePhotograph
     let openModalBtn = document.querySelector('#openModal')
     openModalBtn.addEventListener("click", openModal)
+    
     let closeModalBtn = document.querySelectorAll('.closeModal')
     closeModalBtn.forEach(el => {
         el.addEventListener('click', closeModal)
@@ -39,6 +40,7 @@ let displayAllMedia = async () => {
     let AllMedias = await media.getAllMedia(urlId)
 
     document.querySelector('.galleryContainer').innerHTML = AllMedias
+
 }
 
 window.addEventListener('load', displayAllMedia())

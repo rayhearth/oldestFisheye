@@ -1,14 +1,13 @@
 // DOM Elements
 
-let closeModalBtn = document.querySelectorAll('.closeModal')
+// let closeModalBtn = document.querySelectorAll('.closeModal')
 let form = document.forms['contactForm']
+let modal = document.querySelector('#contactModal')
 
 /*Fonction Open Modal*/
 function openModal() {
     // let name = document.querySelector('h1').textContent
-    let modal = document.querySelector('#contactModal')
     document.body.classList.add('modal-open')
-    // modal.style.display= "block"
     document.body.classList.add('overflow')
     window.scrollTo(0, 0)
     modal.scrollTo(0, 0)
@@ -22,6 +21,7 @@ function openModal() {
 
 /*Fonction close Modal*/
 function closeModal() {
+    // let modal = document.querySelector('#contactModal')
     document.body.classList.remove('modal-open')
     document.body.classList.remove('overflow')
     modal.getAttribute("aria-hidden", "true")
