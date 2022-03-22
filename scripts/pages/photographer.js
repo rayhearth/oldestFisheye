@@ -1,5 +1,6 @@
 import { PhotographFactory } from '../factories/_photographFactory.js'
 import { MediaFactory } from '../factories/_mediaFactory.js'
+import { lightbox } from '../utils/lightbox.js'
 
 // let data = new Photograph()
 
@@ -17,7 +18,7 @@ let displayOnePhotograph = async () => {
 
     document.querySelector('#photographer').innerHTML = OnePhotograph
     
-    //on recupère le nom du photographe va le h1 et n l'injecte via l'id
+    //on recupère le nom du photographe va le h1 et on l'injecte via l'id
     let name = document.querySelector('h1').textContent
     document.querySelector('#photographerName').innerHTML = name
     // on déclare nos sélecteurs et les events apres le chargement de la methode getOnePhotograph
@@ -40,6 +41,8 @@ let displayAllMedia = async () => {
     let AllMedias = await media.getAllMedia(urlId)
 
     document.querySelector('.galleryContainer').innerHTML = AllMedias
+    let openLightbox = document.querySelectorAll('.mediaLink')
+    openLightbox.addEventListener('click', open)
 
 }
 

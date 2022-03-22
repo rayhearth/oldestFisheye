@@ -1,6 +1,6 @@
 export class PhotographersIndexCards {
   constructor(photographers) {
-    console.log(photographers)
+    // console.log(photographers)
     this._name = photographers.name
     this._id = photographers.id
     this._city = photographers.city

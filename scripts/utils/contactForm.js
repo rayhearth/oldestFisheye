@@ -28,7 +28,6 @@ function closeModal() {
 }
 
 
-
 /*Validation form and listener*/
 
 form.addEventListener("submit", function (e) {

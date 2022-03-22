@@ -10,7 +10,6 @@ export class PhotographFactory extends Api {
       /*on se met en attente des informations de note class API*/
       let photographs = await this.get()
       const photographerProfile = photographs.map(p => new PhotographersIndexCards(p))
-
       /*on retourne notre render*/
       return this.renderAllPhotograph(photographerProfile)
     } catch (err) {
