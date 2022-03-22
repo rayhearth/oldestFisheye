@@ -1,8 +1,8 @@
-// .lightboxOpen{
-//   .lightbox{
-//     display: block;
-//   }
-// }
+.lightboxOpen{
+  .lightbox{
+    display: block;
+  }
+}
 .lightbox {
   display: none;
   position: fixed;
@@ -13,9 +13,6 @@
   background-color: rgba(255, 251, 251, 0.3);
   z-index: 10;
   transition: opacity .3s;
-  .fadeOut{
-    opacity: 0;
-  }
   button {
     opacity: 0.5;
     height: 30px;
@@ -49,6 +46,9 @@
       top: 20px;
       right: 20px;
       z-index: 12;
+      svg{
+        fill: $red;
+      }
     }
   .lightbox__container {
     margin-left: 50px;

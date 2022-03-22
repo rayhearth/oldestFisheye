@@ -2,7 +2,7 @@ export class lightboxContain {
 
   openLightbox() {
     //appelée dans photographer.js/displayDataMedia()
-    document.body.classlist.add('lightboxOpen')
+    document.body.classList.add('lightboxOpen')
     document.body.classList.add('overflow')
     window.scrollTo(0, 0)
     lightboxMedia.scrollTo(0, 0)
@@ -43,11 +43,13 @@ export class lightboxContain {
   //Navigue entre les images, en liaison avec les chevrons (suivant/precedent)
   //appelée dans fact_lightbox.js/ onclick
   mediaNav(n) {
+    let mediaIndex
     mediaVue(mediaIndex += n);
   }
 
   //se situer au moment de la navigation entre images
-  mediaLocal(n) { //appelée dans photographer.js/displayDataMedia()
+  mediaLocal(n) {
+    let mediaIndex = 1 //appelée dans photographer.js/displayDataMedia()
     mediaVue(mediaIndex = n);
   }
 

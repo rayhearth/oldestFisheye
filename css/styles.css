@@ -38,6 +38,10 @@ img.logo {
   box-shadow: 4px 4px 8px #c4c4c4;
 }
 
+.lightboxOpen .lightbox {
+  display: block;
+}
+
 .lightbox {
   display: none;
   position: fixed;
@@ -48,9 +52,6 @@ img.logo {
   background-color: rgba(255, 251, 251, 0.3);
   z-index: 10;
   transition: opacity 0.3s;
-}
-.lightbox .fadeOut {
-  opacity: 0;
 }
 .lightbox button {
   opacity: 0.5;
@@ -85,6 +86,9 @@ img.logo {
   top: 20px;
   right: 20px;
   z-index: 12;
+}
+.lightbox .lightbox__close svg {
+  fill: #901C1C;
 }
 .lightbox .lightbox__container {
   margin-left: 50px;
