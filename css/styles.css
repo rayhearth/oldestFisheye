@@ -9,8 +9,7 @@ body {
   font-family: "DM Sans", sans-serif;
   margin: 0;
 }
-
-.overflow {
+body .overflow {
   overflow: hidden;
 }
 
@@ -40,6 +39,7 @@ img.logo {
 }
 
 .lightbox {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;

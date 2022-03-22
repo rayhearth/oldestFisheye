@@ -1,6 +1,6 @@
 import { Api } from '../api/_api.js'
 import { VideoMediaCards, ImageMediaCards } from '../models/_mediasCards.js'
-// import { lightbox } from '../utils/lightbox.js'
+import { lightboxContain } from '../utils/lightbox.js'
 
 
 export class MediaFactory extends Api {
@@ -66,7 +66,7 @@ export class MediaFactory extends Api {
       </div>
     </div>
 
-    <div class="ligthbox" id="ligthbox" arial-label="image closeup view" role="dialog">
+    <div class="lightbox" id="ligthbox" arial-label="image closeup view" role="dialog">
     <button class="lightbox__prev" aria-label="Previous media" data-lightbox-prev>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
       <path
