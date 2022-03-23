@@ -1,5 +1,7 @@
 export class lightboxContain {
 
+  
+
   openLightbox() {
     //appelée dans photographer.js/displayDataMedia()
     document.body.classList.add('lightboxOpen')
@@ -23,53 +25,76 @@ export class lightboxContain {
 
 
   //apparaitre et disparaitre l'image
-  currentMedia(n) { //appelée dans function mediaNav et mediaLocal
-    let mediaIndex = 1
-    let i
+  // navigation in lightbox (arrows or keyboard)
+  navigate() {
+    leftArrow.addEventListener("click", leftAction);
+    rightArrow.addEventListener("click", rightAction);
+    leftArrow.addEventListener("keydown", leftEvent => {
+      if (leftEvent.keyCode === 13 || leftEvent.keyCode === 32) {
+        leftEvent.preventDefault();
+        leftAction();
+      }
+    })
+    rightArrow.addEventListener("keydown", rightEvent => {
+      if (rightEvent.keyCode === 13 || rightEvent.keyCode === 32) {
+        rightEvent.preventDefault();
+        rightAction();
+      }
+    })
+    window.addEventListener("keydown", event => {
 
-    if (n > lightboxMedia.length) {
-      mediaIndex = 1
-    }
-    if (n < 1) {
-      mediaIndex = lightboxMedia.length
-    }
-    for (i = 0; i < lightboxMedia.length; i++) {
-      lightboxMedia[i].style.display = "none"
-    }
-    lightboxMedia[mediaIndex - 1].style.display = "block"
-
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        event.stopPropagation();
+        leftAction();
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        event.stopPropagation();
+        rightAction()
+      } else if (event.keyCode === 27 && lightbox.contains(document.activeElement)) {
+        event.preventDefault();
+        lastMediaId = document.querySelector(".lightbox__content__container__media__insert").getAttribute("data-media-id");
+        closeDelay(lastMediaId);
+      }
+    })
+    closeLightbox.addEventListener("keydown", e => {
+      if (e.keyCode === 9 && closeLightbox.contains(document.activeElement)) {
+        e.preventDefault();
+        e.stopPropagation();
+        lightbox.focus();
+      } else if (e.keyCode === 13 || e.keyCode === 32) {
+        e.preventDefault();
+        lastMediaId = document.querySelector(".lightbox__content__container__media__insert").getAttribute("data-media-id");
+        closeDelay(lastMediaId);
+      }
+    })
   }
 
-  //Navigue entre les images, en liaison avec les chevrons (suivant/precedent)
-  //appelée dans fact_lightbox.js/ onclick
-  mediaNav(n) {
-    let mediaIndex
-    mediaVue(mediaIndex += n);
-  }
 
-  //se situer au moment de la navigation entre images
-  mediaLocal(n) {
-    let mediaIndex = 1 //appelée dans photographer.js/displayDataMedia()
-    mediaVue(mediaIndex = n);
-  }
-
-
-  //EVENEMENTS AU CLAVIER POUR LIGHTBOX
-
-  // document.onkeydown = lightboxNavClavier;
-
-  lightboxNavClavier(e) {
-
-    if (e.keyCode == '37') {    //CHEVRON PRECEDENT
-      mediaNav(-1);
-    }
-    else if (e.keyCode == '39') {   //CHEVRON SUIVANT
-      mediaNav(1);
-    }
-
-    if (lightbox.style.display = "block" && e.code == "Escape") { //CROIX DE FERMETURE
-      close();
+  const rightAction = () => {
+    if (indexOfMediaVue > -1 && indexOfMediaVue < medias.length - 1) {
+      indexOfMediaVue++;
+      mediaInLightbox.innerHTML = "";
+      getLightbox(medias[indexOfMediaVue], mediaInLightbox, photographe);
+    } else if (indexOfMediaVue == medias.length - 1) {
+      indexOfMediaVue = 0;
+      mediaInLightbox.innerHTML = "";
+      getLightbox(medias[0], mediaInLightbox, photographe);
     }
   }
+
+  const leftAction = () => {
+    if (indexOfMediaVue > 0) {
+      indexOfMediaVue--;
+      mediaInLightbox.innerHTML = "";
+      getLightbox(medias[indexOfMediaVue], mediaInLightbox, photographe);
+    } else if (indexOfMediaVue == 0) {
+      indexOfMediaVue = medias.length - 1;
+      mediaInLightbox.innerHTML = "";
+      getLightbox(medias[medias.length - 1], mediaInLightbox, photographe);
+    }
+  }
+
+
 
 }
