@@ -1,5 +1,6 @@
 import { PhotographFactory } from '../factories/_photographFactory.js'
 import { MediaFactory } from '../factories/_mediaFactory.js'
+import { lightboxContain } from '../utils/lightbox.js'
 
 // let data = new Photograph()
 
@@ -41,8 +42,10 @@ let displayAllMedia = async () => {
 
     document.querySelector('.galleryContainer').innerHTML = AllMedias
 
-    let oLightbox = document.querySelector('#lightbox')
-    openLightbox.addEventListener('click', oLightbox)
+    let lightbox = new lightboxContain
+    let open = lightbox.openLightbox()    
+    // let openLightbox = document.querySelector('#lightbox')
+    // openLightbox.addEventListener('click', openLightbox)
 
 }
 

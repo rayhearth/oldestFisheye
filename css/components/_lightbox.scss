@@ -1,5 +1,5 @@
-.lightboxOpen{
-  .lightbox{
+.lightboxOpen {
+  .lightbox {
     display: block;
   }
 }
@@ -9,10 +9,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(255, 251, 251, 0.3);
   z-index: 10;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
   button {
     opacity: 0.5;
     height: 30px;
@@ -24,49 +24,51 @@
       opacity: 1;
     }
   }
-    .lightbox__next,
-    .lightbox__prev {
-      width: 50px;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      right: 0;
-      margin-top: -14px;
-      z-index: 11;
+  .lightbox__next,
+  .lightbox__prev {
+    width: 50px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: -14px;
+    z-index: 11;
+  }
+  .lightbox__prev {
+    right: auto;
+    left: 0;
+    transform: rotate(180deg);
+  }
+  .lightbox__close {
+    width: 15px;
+    height: 15px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 12;
+    svg {
+      fill: $red;
     }
-    .lightbox__prev {
-      right: auto;
-      left: 0;
-      transform: rotate(180deg);
-    }
-    .lightbox__close {
-      width: 15px;
-      height: 15px;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 12;
-      svg{
-        fill: $red;
+  }
+  .lightbox-media {
+    .lightbox-media-container {
+      margin-left: 50px;
+      margin-right: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      // align-items: center;
+      // min-height: 100vh;
+      img {
+        max-height: 100vh;
+        max-width: 100%;
+        object-fit: cover;
       }
-    }
-  .lightbox__container {
-    margin-left: 50px;
-    margin-right: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    // align-items: center;
-    // min-height: 100vh;
-    img {
-      max-height: 100vh;
-      max-width: 100%;
-      object-fit: cover;
-    }
-    .titleImg {
-      justify-content: flex-start;
-      color: $red-light;
-      font-size: 24ps;
+      h2 {
+        justify-content: flex-start;
+        color: $red-light;
+        font-size: 24ps;
+      }
     }
   }
 }

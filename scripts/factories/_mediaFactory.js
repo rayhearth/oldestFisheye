@@ -1,7 +1,5 @@
 import { Api } from '../api/_api.js'
 import { VideoMediaCards, ImageMediaCards } from '../models/_mediasCards.js'
-import { lightboxContain } from '../utils/lightbox.js'
-
 
 export class MediaFactory extends Api {
 
@@ -15,7 +13,6 @@ export class MediaFactory extends Api {
       //On declare render picture qui va parcourir notre array obtenu via getMediaApi 
       let renderPicture = medias.map(media => {
         //pour chaque media
-        // console.log(media)
         if (media.hasOwnProperty("image")) {
           //si le media a pour nom "image" alors il va nous retourner notre ImageMediaFactory
           return new ImageMediaCards(media)
@@ -25,7 +22,6 @@ export class MediaFactory extends Api {
         }
       })
       // ajout instance lightbox
-      // console.log(renderPicture)
       //lorsque nous retournons la methode renderAllMedia on lui transmet notre renderPicture
       return this.renderAllMedia(renderPicture)
     } catch (err) {
@@ -93,7 +89,5 @@ export class MediaFactory extends Api {
     </div>
   </article>`
   }
-
-
 
 }
