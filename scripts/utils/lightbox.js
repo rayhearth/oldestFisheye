@@ -43,17 +43,17 @@ export class lightboxContain {
   })
   window.addEventListener("keydown", event => {
 
-    if (event.key === "ArrowLeft") {
+    if (event.key === "") {
       event.preventDefault();
       event.stopPropagation();
       previous();
-    } else if (event.key === "ArrowRight") {
+    } else if (event.key === "") {
       event.preventDefault();
       event.stopPropagation();
       rightAction()
     } else if (event.keyCode === 27 && lightbox.contains(document.activeElement)) {
       event.preventDefault();
-      lastMediaId = document.querySelector(".lightbox__content__container__media__insert").getAttribute("data-media-id");
+      lastMediaId = document.querySelector(".lightbox-media-container").getAttribute("data-media-id");
       closeDelay(lastMediaId);
     }
   })
@@ -64,7 +64,7 @@ export class lightboxContain {
       lightbox.focus();
     } else if (e.keyCode === 13 || e.keyCode === 32) {
       e.preventDefault();
-      lastMediaId = document.querySelector(".lightbox__content__container__media__insert").getAttribute("data-media-id");
+      lastMediaId = document.querySelector(".lightbox-media-container").getAttribute("data-media-id");
       closeDelay(lastMediaId);
     }
   })
