@@ -11,7 +11,7 @@ export class MediaFactory extends Api {
     try {
       //on reste en attente de la fonction getMediaApi
       let medias = await this.getMediaApi(photographerId)
-      // console.log(medias)
+      console.log(medias)
       //On declare render picture qui va parcourir notre array obtenu via getMediaApi 
       let renderPicture = medias.map(media => {
         //pour chaque media
@@ -73,9 +73,9 @@ export class MediaFactory extends Api {
         </svg>
       </button>
       <div class="lightbox-media">
-      <div class="lightbox-media-container" media-id="${media._id}" data-lightbox-media>
-        ${media._image ? media.renderImage() : media.renderVideo()}
-      </div>
+        <div class="lightbox-media-container" media-id="${media._id}" data-lightbox-media>
+          ${media._image ? media.renderImage() : media.renderVideo()}
+        </div>
         <h2 class="lightbox-media-title" data-lightbox-caption>${media._title}</h2>
       </div>
       <button class="lightbox__next" aria-label="Next media" data-lightbox-next>
