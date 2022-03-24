@@ -41,12 +41,14 @@ let displayAllMedia = async () => {
     let AllMedias = await media.getAllMedia(urlId)
 
     document.querySelector('.galleryContainer').innerHTML = AllMedias
+    document.querySelector('#light').innerHTML = media.light
 
-    let lightbox = new lightboxContain
-    let open = lightbox.openLightbox()    
+    // let lightbox = new lightboxContain
+    // let open = lightbox.openLightbox()    
     // let openLightbox = document.querySelector('#lightbox')
     // openLightbox.addEventListener('click', openLightbox)
 
 }
 
 window.addEventListener('load', displayAllMedia())
+window.addEventListener('selectstart')
