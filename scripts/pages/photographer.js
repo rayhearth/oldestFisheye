@@ -51,4 +51,4 @@ let displayAllMedia = async () => {
 }
 
 window.addEventListener('load', displayAllMedia())
-window.addEventListener('selectstart')
+// window.addEventListener('selectstart')
