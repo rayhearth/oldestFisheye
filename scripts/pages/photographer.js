@@ -1,6 +1,6 @@
 import { PhotographFactory } from '../factories/_photographFactory.js'
 import { MediaFactory } from '../factories/_mediaFactory.js'
-import { lightboxContain } from '../utils/lightbox.js'
+import { LightboxContain } from '../utils/lightbox.js'
 
 // let data = new Photograph()
 
@@ -11,7 +11,6 @@ const urlParams = new URLSearchParams(window.location.search)
 const urlId = urlParams.get('id')
 
 let displayOnePhotograph = async () => {
-
 
     let photograph = new PhotographFactory()
     let OnePhotograph = await photograph.getOnePhotograph(urlId)
@@ -38,12 +37,15 @@ let displayAllMedia = async () => {
 
 
     let media = new MediaFactory()
+    // console.log(media)
     let AllMedias = await media.getAllMedia(urlId)
+    // console.log(AllMedias)
 
     document.querySelector('.galleryContainer').innerHTML = AllMedias
     document.querySelector('#light').innerHTML = media.light
 
-    // let lightbox = new lightboxContain
+    let lightbox = new LightboxContain(media)
+    console.log(lightbox)
     // let open = lightbox.openLightbox()    
     // let openLightbox = document.querySelector('#lightbox')
     // openLightbox.addEventListener('click', openLightbox)

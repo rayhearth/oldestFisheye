@@ -10,7 +10,7 @@ export class MediaFactory extends Api {
     try {
       //on reste en attente de la fonction getMediaApi
       let medias = await this.getMediaApi(photographerId)
-      console.log(medias)
+      // console.log(medias)
       //On declare render picture qui va parcourir notre array obtenu via getMediaApi 
       let renderPicture = medias.map(media => {
         //pour chaque media

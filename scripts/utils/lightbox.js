@@ -1,51 +1,66 @@
-export class lightboxContain {
+export class LightboxContain {
 
-  
-  constructor(listMedias) {
-    this.currentMedia = null;
-    this.listMedias = listMedias //avoir la liste des medias et pouvoir récupérer le précédent et le suivant
-    this.onKeyUp = this.onKeyUp.bind(this)
-    this.manageEvent()
+  constructor(media) {
+    this.mediaId = media.id
+    this.currrentMedia = null
+    this._photographerId = media.photographerId
+    this._title = media.title
+    this._video = media.video
   }
   
+  // constructor(media, selector) {
+  //   this.medias = media.id //avoir la liste des medias et pouvoir récupérer le précédent et le suivant
+  //   this.currentMedia = null
+  //   this.selector = selector
+  //   this.element = document.querySelector(selector)
+  // }
 
-  //afficher le prochain média
-  //si on arrive en fin de tableau des medias on repart au début.
+    
+  play(){
+    this.currentMedia = this.media[0]
+  }
+
   next() {
-    //on récupère l'index de l'élément en cours dans le tableau (findIndex)
-    const index = this.listMedias.findIndex(
-      (element) => element.id == this.currentMedia.id
-    )
-    if (index == this.listMedias.length - 1) {
-      //si on arrive sur le dernier index du tableau
-      this.currentMedia = this.listMedias[0] //on repart au debut du tableau
-    } else {
-      this.currentMedia = this.listMedias[index + 1]
-    }
-    //console.log(index);
-    this.display()
+      for (let i=0; i<this.media.length; i++) {
+        if(this.media[i] == this.currentMedia){
+          if(i == this.media.lenght){
+            this.currentMedia = this.media[0]
+          }else{
+            this.currentMedia = this.media[++i]
+
+          }
+          break
+        }
+      }
   }
 
-  //afficher les médias précédents
-  //si on arrive au début de tableau, on repart sur le dernier média
   previous() {
-    const index = this.listMedias.findIndex(
-      (element) => element.id == this.currentMedia.id
-    );
-    if (index == 0) {
-      //si on est sur le 1er element du tableau
-      this.currentMedia = this.listMedias[this.listMedias.length - 1] //on repart de la fin du tableau
-    } else {
-      this.currentMedia = this.listMedias[index - 1]
+    for (let i=0; i<this.media.length; i++) {
+      if(this.media[i] == this.currentMedia){
+        this.currentMedia = this.media[--i]
+        break
+      }
     }
-    //console.log(index);
-    this.display()
   }
 
-  
+  manageEvent(){
+    const nextMedia = document.querySelector(".lightbox__next")
+    nextMedia.addEventListener("click", ()=>{
+      this.next()
+    })
+
+    const prevMedia = document.querySelector(".lightbox__prev")
+    prevMedia.addEventListener("click", ()=>{
+      this.previous()
+    })
+
+    const closeBtn = document.querySelector("#lightbox__close")
+    closeBtn.addEventListener("click",()=>{
+      this.closeLightbox()
+    })
+  }
 
   openLightbox() {
-    //appelée dans photographer.js/displayDataMedia()
     document.body.classList.add('lightboxOpen')
     document.body.classList.add('overflow')
     window.scrollTo(0, 0)
