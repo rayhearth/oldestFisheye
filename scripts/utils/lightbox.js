@@ -1,11 +1,12 @@
 export class LightboxContain {
 
   constructor(media) {
-    this.mediaId = media.id
+    this.media = media.id
     this.currrentMedia = null
     this._photographerId = media.photographerId
     this._title = media.title
     this._video = media.video
+
   }
   
   // constructor(media, selector) {

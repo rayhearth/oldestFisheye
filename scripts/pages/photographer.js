@@ -39,14 +39,13 @@ let displayAllMedia = async () => {
     let media = new MediaFactory()
     // console.log(media)
     let AllMedias = await media.getAllMedia(urlId)
-    // console.log(AllMedias)
 
     document.querySelector('.galleryContainer').innerHTML = AllMedias
     document.querySelector('#light').innerHTML = media.light
 
-    let lightbox = new LightboxContain(media)
+    let lightbox = new LightboxContain(AllMedias)
     console.log(lightbox)
-    // let open = lightbox.openLightbox()    
+    // let open = lightbox.openLightbox()
     // let openLightbox = document.querySelector('#lightbox')
     // openLightbox.addEventListener('click', openLightbox)
 
