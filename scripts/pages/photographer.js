@@ -1,6 +1,6 @@
 import { PhotographFactory } from '../factories/_photographFactory.js'
 import { MediaFactory } from '../factories/_mediaFactory.js'
-import { LightboxContain } from '../utils/lightbox.js'
+// import { LightboxContain } from '../utils/lightbox.js'
 
 // let data = new Photograph()
 
@@ -43,11 +43,21 @@ let displayAllMedia = async () => {
     document.querySelector('.galleryContainer').innerHTML = AllMedias
     document.querySelector('#light').innerHTML = media.light
 
-    let lightbox = new LightboxContain(AllMedias)
-    console.log(lightbox)
-    // let open = lightbox.openLightbox()
-    // let openLightbox = document.querySelector('#lightbox')
-    // openLightbox.addEventListener('click', openLightbox)
+    let lightboxData = document.querySelectorAll('.mediaLink')
+
+    // let lightbox = new LightboxContain()
+    // console.log(lightbox)
+    lightboxData.forEach(el =>{
+        el.addEventListener('click', openLightbox)
+    })
+    
+    // console.log(lightboxData)
+    // for(let i=0; i<lightboxData.childNodes.length; i++){
+    //     lightboxData.childNodes[i].childNodes[0].addEventListener('click',function(){
+    //         openLightbox()
+    //         manageEvent()
+    //     })
+    // }
 
 }
 
