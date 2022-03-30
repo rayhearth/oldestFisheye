@@ -1,14 +1,14 @@
-// export class LightboxContain {
+export class LightboxContain {
 
-//   constructor(medias) {
-//     this._id = medias.id
-//     this.currrentMedia = null
-//     this._photographerId = medias.photographerId
-//     this._title = medias.title
-//     this._video = medias.video
-//     this._image = medias.image
-//   }
-  
+  constructor(medias) {
+    this._id = medias.id
+    this.currrentMedia = null
+    this._photographerId = medias.photographerId
+    this._title = medias.title
+    this._video = medias.video
+    this._image = medias.image
+  }
+
   // renderLightbox(){
   //   return `<div class="lightbox" id="ligthbox" arial-label="image closeup view" role="dialog">
   //   <button class="lightbox__prev" aria-label="Previous media" data-lightbox-prev>
@@ -38,63 +38,63 @@
   // </div>`
   // }
 
-    
+
   // play(){
   //   this.currentMedia = this.medias[0]
   // }
 
-  // next() {
-  //     for (let i=0; i<this.medias.length; i++) {
-  //       if(this.medias[i] == this.currentMedia){
-  //         if(i == this.medias.lenght){
-  //           this.currentMedia = this.medias[0]
-  //         }else{
-  //           this.currentMedia = this.medias[++i]
+  next() {
+      for (let i=0; i<this.medias.length; i++) {
+        if(this.medias[i] == this.currentMedia){
+          if(i == this.medias.lenght){
+            this.currentMedia = this.medias[0]
+          }else{
+            this.currentMedia = this.medias[++i]
 
-  //         }
-  //         break
-  //       }
-  //     }
-  // }
+          }
+          break
+        }
+      }
+  }
 
-  // previous() {
-  //   for (let i=0; i<this.medias.length; i++) {
-  //     if(this.medias[i] == this.currentMedia){
-  //       this.currentMedia = this.medias[--i]
-  //       break
-  //     }
-  //   }
-  // }
+  previous() {
+    for (let i=0; i<this.medias.length; i++) {
+      if(this.medias[i] == this.currentMedia){
+        this.currentMedia = this.medias[--i]
+        break
+      }
+    }
+  }
 
-  function manageEvent(){
+  manageEvent() {
     const nextMedia = document.querySelector(".lightbox__next")
-    nextMedia.addEventListener("click", ()=>{
+    nextMedia.addEventListener("click", () => {
       this.next()
     })
 
     const prevMedia = document.querySelector(".lightbox__prev")
-    prevMedia.addEventListener("click", ()=>{
+    prevMedia.addEventListener("click", () => {
       this.previous()
     })
 
     const closeBtn = document.querySelector("#lightbox__close")
-    closeBtn.addEventListener("click",()=>{
+    closeBtn.addEventListener("click", () => {
       this.closeLightbox()
     })
   }
 
-  function openLightbox() {
+  openLightbox() {
     document.body.classList.add('lightboxOpen')
     document.body.classList.add('overflow')
     window.scrollTo(0, 0)
-    lightbox-media.scrollTo(0, 0)
+    lightbox - media.scrollTo(0, 0)
 
     lightbox.getAttribute('aria-hidden', 'false')
     lightbox.style.display = ''
   }
 
 
-  function closeLightbox() {
+  closeLightbox() {
     document.body.classList.remove('lightboxOpen')
     document.body.classList.remove('overflow')
     lightbox.getAttribute('aria-hidden', 'true')
@@ -103,4 +103,4 @@
   }
 
 
-// }
+}
