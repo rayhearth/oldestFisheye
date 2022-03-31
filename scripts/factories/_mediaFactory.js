@@ -1,6 +1,6 @@
 import { Api } from '../api/_api.js'
 import { VideoMediaCards, ImageMediaCards } from '../models/_mediasCards.js'
-
+import { LightboxContain } from '../utils/lightbox.js'
 export class MediaFactory extends Api {
 
   light = ''
@@ -22,6 +22,10 @@ export class MediaFactory extends Api {
           return new VideoMediaCards(media)
         }
       })
+      console.log(renderPicture)
+
+      let lightbox = medias.map(media =>new LightboxContain(media))
+      // console.log(lightbox)
       // ajout instance lightbox
       //lorsque nous retournons la methode renderAllMedia on lui transmet notre renderPicture
       return this.renderAllMedia(renderPicture)

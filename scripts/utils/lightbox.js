@@ -3,13 +3,53 @@ export class LightboxContain {
   constructor(medias) {
     this._id = medias.id
     this.currrentMedia = null
+    this.listMedias = medias //permet de récupérer tous les médias pour affichage prev et next
     this._photographerId = medias.photographerId
-    this._title = medias.title
-    this._video = medias.video
-    this._image = medias.image
   }
 
-  // renderLightbox(){
+  //methode pour rechercher dans nos médias l'id qui est égale à l'id passé ds les paramètres
+  mediaById(id){
+    return this.listMedias.find((medias) => medias.id == id)
+  }
+
+  //affiche modal au click d'un média
+  CurrentLightbox(id){
+    this.currentMedia = this.mediaById(id)
+    this.openLightbox()
+    document.body.classList.add('overflow')
+    window.scrollTo(0, 0)
+    lightbox-media.scrollTo(0, 0)
+
+    lightbox.setAttribute('aria-hidden', 'false')
+    lightbox.style.display = ''
+  }
+
+  openLightbox(){
+
+    let content = document.querySelector('.lightbox-media-container')
+    
+    document.addEventListener('keyup', this.onKeyUp)
+
+    if(this.currentMedia.image){
+      content.innerHTML=
+      `<img class="picture" src="assets/images/photographers/${this.currentMedia.photographerId}/media/${this.currentMedia.image}" alt="${this.currentMedia.title}">
+      <h2 class="lightbox-media-title" data-lightbox-caption>${this.currentMedia.title}</h2>
+      `
+    }else{
+      content.innerHTML=
+      `<video controls class="picture" media-id=${this.currentMedia.id} aria-label=${this.currentMedia.title}>
+      <source src="assets/images/photographers/${this._photographerId}/media/${this._video}"type="video/mp4"></video>
+      <svg class="svg-inline--fa fa-video mediaIcon" aria-hidden="true" focusable="false" data-prefix="fas"
+      data-icon="video" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="">
+      <path fill="currentColor"
+      d="M384 112v288c0 26.51-21.49 48-48 48h-288c-26.51 0-48-21.49-48-48v-288c0-26.51 21.49-48 48-48h288C362.5 64 384 85.49 384 112zM576 127.5v256.9c0 25.5-29.17 40.39-50.39 25.79L416 334.7V177.3l109.6-75.56C546.9 87.13 576 102.1 576 127.5z">
+      </path>
+      </svg>
+      <h2 class="lightbox-media-title" data-lightbox-caption>${this.currentMedia.title}</h2>
+      `
+    }
+    document.querySelector('.lightbox').classList.add('lightboxOpen')
+
   //   return `<div class="lightbox" id="ligthbox" arial-label="image closeup view" role="dialog">
   //   <button class="lightbox__prev" aria-label="Previous media" data-lightbox-prev>
   //     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
@@ -36,7 +76,7 @@ export class LightboxContain {
   //     </svg>
   //   </button>
   // </div>`
-  // }
+  }
 
 
   // play(){
@@ -50,7 +90,6 @@ export class LightboxContain {
             this.currentMedia = this.medias[0]
           }else{
             this.currentMedia = this.medias[++i]
-
           }
           break
         }
@@ -60,7 +99,11 @@ export class LightboxContain {
   previous() {
     for (let i=0; i<this.medias.length; i++) {
       if(this.medias[i] == this.currentMedia){
-        this.currentMedia = this.medias[--i]
+        if(i == this.medias.lenght){
+          this.currentMedia = this.medias[0]
+        }else{
+          this.currentMedia = this.medias[--i]
+        }
         break
       }
     }
@@ -83,21 +126,13 @@ export class LightboxContain {
     })
   }
 
-  openLightbox() {
-    document.body.classList.add('lightboxOpen')
-    document.body.classList.add('overflow')
-    window.scrollTo(0, 0)
-    lightbox - media.scrollTo(0, 0)
-
-    lightbox.getAttribute('aria-hidden', 'false')
-    lightbox.style.display = ''
-  }
-
-
+  
+  //Fermeture de la lightbox
   closeLightbox() {
     document.body.classList.remove('lightboxOpen')
     document.body.classList.remove('overflow')
-    lightbox.getAttribute('aria-hidden', 'true')
+    document.removeEventListener('Keyup', this.onKeyUp)
+    lightbox.setAttribute('aria-hidden', 'true')
 
     lightbox.style.display = 'none'
   }

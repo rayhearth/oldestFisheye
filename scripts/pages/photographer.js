@@ -40,19 +40,24 @@ let displayAllMedia = async () => {
     let media = new MediaFactory()
     // console.log(media)
     let AllMedias = await media.getAllMedia(urlId)
+    // console.log(AllMedias)
 
     document.querySelector('.galleryContainer').innerHTML = AllMedias
     document.querySelector('#light').innerHTML = media.light
 
-    function getlightbox(){
-        try{
-            let lightboxData = document.querySelectorAll('.mediaLink')
-            const data = lightboxData.map((d)=> new LightboxContain(d))
-            return this.openLightbox(data)
-        }catch (err){
-            console.log(err)
-        }
-    }
+    let lightboxData = document.querySelectorAll('.mediaLink')
+    
+
+
+    // function getlightbox(){
+    //     try{
+    //         let lightboxData = document.querySelectorAll('.mediaLink')
+    //         const data = lightboxData.map((d)=> new LightboxContain(d))
+    //         return this.openLightbox(data)
+    //     }catch (err){
+    //         console.log(err)
+    //     }
+    // }
 
     // let lightbox = new LightboxContain()
     // console.log(lightbox)

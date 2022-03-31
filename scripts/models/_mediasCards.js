@@ -11,7 +11,7 @@ export class VideoMediaCards {
 
   renderVideo() {
     return `
-      <video class="picture" media-id=${this._id} poster="">
+      <video controls class="picture" media-id=${this._id} aria-label=${this._title}>
         <source src="assets/images/photographers/${this._photographerId}/media/${this._video}"type="video/mp4"></video>
         <svg class="svg-inline--fa fa-video mediaIcon" aria-hidden="true" focusable="false" data-prefix="fas"
         data-icon="video" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="">
