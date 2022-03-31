@@ -43,9 +43,9 @@ let displayAllMedia = async () => {
     // console.log(AllMedias)
 
     document.querySelector('.galleryContainer').innerHTML = AllMedias
-    document.querySelector('#light').innerHTML = media.light
+    // document.querySelector('#light').innerHTML = media.light
 
-    let lightboxData = document.querySelectorAll('.mediaLink')
+    // let lightboxData = document.querySelectorAll('.mediaLink')
     
 
 
