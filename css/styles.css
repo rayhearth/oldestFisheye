@@ -39,7 +39,8 @@ img.logo {
 }
 
 .lightboxOpen .lightbox {
-  display: block;
+  display: flex;
+  justify-content: center;
 }
 
 .lightbox {
@@ -82,7 +83,7 @@ img.logo {
 .lightbox .lightbox__close {
   width: 15px;
   height: 15px;
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 20px;
   z-index: 12;
@@ -90,12 +91,16 @@ img.logo {
 .lightbox .lightbox__close svg {
   fill: #901C1C;
 }
-.lightbox .lightbox-media .lightbox-media-container {
-  margin-left: 50px;
-  margin-right: 50px;
+.lightbox .lightbox-media {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 50%;
+  margin: auto 0;
+}
+.lightbox .lightbox-media .lightbox-media-container {
+  margin-left: 50px;
+  margin-right: 50px;
 }
 .lightbox .lightbox-media .lightbox-media-container img {
   max-height: 100vh;

@@ -2,6 +2,7 @@ export class LightboxContain {
 
   constructor(medias) {
     this._id = medias.id
+    this._image = medias.image
     this.currrentMedia = null
     this.listMedias = medias //permet de récupérer tous les médias pour affichage prev et next
     this._photographerId = medias.photographerId
@@ -27,11 +28,12 @@ export class LightboxContain {
   //Méthode pour afficher la modale et injecter notre media
   openLightbox(){
     
-    let content = document.querySelector('.lightbox-media-container')
+    let content = document.querySelector('#light')
+    this.currentMedia =
     
     document.addEventListener('keyup', this.onKeyUp)
     
-    if(this.currentMedia.image){
+    if(this.image){
       content.innerHTML=
       `<img class="picture" src="assets/images/photographers/${this.currentMedia.photographerId}/media/${this.currentMedia.image}" alt="${this.currentMedia.title}">
       <h2 class="lightbox-media-title" data-lightbox-caption>${this.currentMedia.title}</h2>
@@ -67,12 +69,12 @@ export class LightboxContain {
 
 
   next() {
-      for (let i=0; i<this.medias.length; i++) {
-        if(this.medias[i] == this.currentMedia){
-          if(i == this.medias.lenght){
-            this.currentMedia = this.medias[0]
+      for (let i=0; i<this.listMedias.length; i++) {
+        if(this.listMedias[i] == this.currentMedia){
+          if(i == this.listMedias.lenght){
+            this.currentMedia = this.listMedias[0]
           }else{
-            this.currentMedia = this.medias[++i]
+            this.currentMedia = this.listMedias[++i]
           }
           break
         }
@@ -80,12 +82,12 @@ export class LightboxContain {
   }
 
   previous() {
-    for (let i=0; i<this.medias.length; i++) {
-      if(this.medias[i] == this.currentMedia){
-        if(i == this.medias.lenght){
-          this.currentMedia = this.medias[0]
+    for (let i=0; i<this.listMedias.length; i++) {
+      if(this.listMediass[i] == this.currentMedia){
+        if(i == this.listMedias.lenght){
+          this.currentMedia = this.listMedias[0]
         }else{
-          this.currentMedia = this.medias[--i]
+          this.currentMedia = this.listMedias[--i]
         }
         break
       }
@@ -139,7 +141,7 @@ export class LightboxContain {
     lightboxTitleMedia.focus()
     const closeBtn = document.querySelector(".lightbox__close")
     const prev = document.querySelector(".lightbox__prev")
-    const next = document.querySelector(".lightbox_next")
+    const next = document.querySelector(".lightbox__next")
 
     lightboxTitleMedia.addEventListener("focusout", () => {
       next.focus()
