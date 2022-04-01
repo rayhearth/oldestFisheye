@@ -25,13 +25,12 @@ export class MediaFactory extends Api {
       // console.log(renderPicture)
 
       let lightbox = medias.map(media => new LightboxContain(media))
-      let lbo = ''
-      for (let lb of lightbox) {
+      let lbo = '' 
+      for(let lb of lightbox){
         lbo += lb.openLightbox()
       }
       console.log(lightbox)
       console.log(lbo)
-
 
       //lorsque nous retournons la methode renderAllMedia on lui transmet notre renderPicture
       return this.renderAllMedia(renderPicture)
@@ -45,7 +44,6 @@ export class MediaFactory extends Api {
     for (let media of medias) {
       all += this.renderOneMedia(media)
     }
-
     return all
   }
 
@@ -74,5 +72,5 @@ export class MediaFactory extends Api {
   </article>`
   }
 
-
+  
 }

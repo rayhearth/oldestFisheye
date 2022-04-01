@@ -1,16 +1,17 @@
 export class LightboxContain {
 
   constructor(medias) {
-    this._id = medias.id
-    this._image = medias.image
+    // this._id = medias.id
+    // this._image = medias.image
     this.currrentMedia = null
     this.listMedias = medias //permet de récupérer tous les médias pour affichage prev et next
-    this._photographerId = medias.photographerId
+    // console.log(this.listMedias)
+    this.manageEvent()
   }
 
-  //methode pour rechercher dans nos médias l'id qui est égale à l'id passé ds les paramètres
+  //methode pour rechercher dans nos médias l'id qui est égale à l'id passé ds la méthode
   mediaById(id){
-    return this.listMedias.find((medias) => medias.id == id)
+    return this.listMedias.find((media) => media.id == id)
   }
 
   //affiche modal au click d'un média
@@ -21,19 +22,19 @@ export class LightboxContain {
     window.scrollTo(0, 0)
     lightbox-media.scrollTo(0, 0)
     
-    lightbox.setAttribute('aria-hidden', 'false')
-    lightbox.style.display = ''
+    // lightbox.setAttribute('aria-hidden', 'false')
+    // lightbox.style.display = ''
   }
   
   //Méthode pour afficher la modale et injecter notre media
   openLightbox(){
     
     let content = document.querySelector('#light')
-    this.currentMedia =
     
+    // console.log(currentMedia)
     document.addEventListener('keyup', this.onKeyUp)
     
-    if(this.image){
+    if(this.currentMedia.image){
       content.innerHTML=
       `<img class="picture" src="assets/images/photographers/${this.currentMedia.photographerId}/media/${this.currentMedia.image}" alt="${this.currentMedia.title}">
       <h2 class="lightbox-media-title" data-lightbox-caption>${this.currentMedia.title}</h2>
