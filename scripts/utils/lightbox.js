@@ -22,15 +22,16 @@ export class LightboxContain {
     window.scrollTo(0, 0)
     lightbox-media.scrollTo(0, 0)
     
-    // lightbox.setAttribute('aria-hidden', 'false')
-    // lightbox.style.display = ''
+    lightbox.setAttribute('aria-hidden', 'false')
+    lightbox.style.display = ''
   }
   
   //Méthode pour afficher la modale et injecter notre media
   openLightbox(){
     
     let content = document.querySelector('#light')
-    
+    this.currentMedia = currentTarget.querySelector()
+
     // console.log(currentMedia)
     document.addEventListener('keyup', this.onKeyUp)
     
