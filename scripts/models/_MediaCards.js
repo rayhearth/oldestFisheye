@@ -20,18 +20,6 @@ export class VideoMediaCards {
         </path>
         </svg>`
   }
-}
-
-export class VideoLightboxCards {
-  constructor(media) {
-    this._id = media.id
-    this._photographerId = media.photographerId
-    this._title = media.title
-    this._video = media.video
-    this._likes = media.likes
-    this._date = media.date
-    this._price = media.price
-  }
 
   renderVideoLightbox() {
     return `
@@ -51,40 +39,29 @@ export class VideoLightboxCards {
 
 export class ImageMediaCards {
   constructor(media) {
-    // console.log("image")
-    // console.log(media)
-    this._id = media.id
-    this._photographerId = media.photographerId
-    this._title = media.title
-    this._image = media.image
-    this._likes = media.likes
-    this._date = media.date
-    this._price = media.price
+      // console.log("image")
+      // console.log(media)
+      this._id = media.id
+      this._photographerId = media.photographerId
+      this._title = media.title
+      this._image = media.image
+      this._likes = media.likes
+      this._date = media.date
+      this._price = media.price
   }
-
 
   renderImage() {
-    return `   
+      return `   
       <img role="button" class="picture" src="assets/images/photographers/${this._photographerId}/media/${this._image}" alt="${this._title}">`
   }
-}
 
-export class ImageLightboxCards{
-  constructor(media) {
-    // console.log("image")
-    this._id = media.id
-    this._photographerId = media.photographerId
-    this._title = media.title
-    this._image = media.image
-    this._likes = media.likes
-    this._date = media.date
-    this._price = media.price
-  }
-
-  renderImageLighbox(){
-    return `
-    assets/images/photographers/${this._photographerId}/media/${this._image}" alt="${this._title}
-    <h2 class="lightbox-media-title" data-lightbox-caption>${this.title}</h2>
-    `
+  renderImageLighbox() {
+      return `
+      assets/images/photographers/${this._photographerId}/media/${this._image}" alt="${this._title}
+      <h2 class="lightbox-media-title" data-lightbox-caption>${this.title}</h2>
+      `
   }
 }
+
+
+

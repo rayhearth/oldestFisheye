@@ -10,8 +10,8 @@ export class LightboxContain {
   // }
 
   constructor(medias) {
-    this.index = medias.index
-    console.log(this.index)
+    // this.index = medias.index
+    // console.log(this.index)
     //  element = this.buildDOM(this._id)
     //  document.body.appendChild(element)
     // this._image = medias.image

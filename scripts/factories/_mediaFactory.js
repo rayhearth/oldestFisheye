@@ -1,5 +1,5 @@
 import { Api } from '../api/_api.js'
-import { VideoMediaCards, ImageMediaCards } from '../models/_mediasCards.js'
+import { VideoMediaCards, ImageMediaCards } from '../models/_MediaCards.js'
 import { LightboxContain } from '../utils/lightbox.js'
 export class MediaFactory extends Api {
 
@@ -25,15 +25,17 @@ export class MediaFactory extends Api {
       // console.log(renderPicture)
 
       let lightbox = medias.map(media => new LightboxContain(media))
-      let lbo = '' 
-      for(let lb of lightbox){
-        lbo += lb.openLightbox()
-      }
-      console.log(lightbox)
+
+      let render = {...this.renderAllMedia(renderPicture), ...this.renderAllLightbox(renderPicture)}
+      // let lbo = '' 
+      // for(let lb of lightbox){
+      //   lbo += lb.openLightbox()
+      // }
+      // console.log(lightbox)
       // console.log(lbo)
 
       //lorsque nous retournons la methode renderAllMedia on lui transmet notre renderPicture
-      return this.renderAllMedia(renderPicture)
+      return this.render(renderPicture)
     } catch (err) {
       console.log(err)
     }
@@ -70,6 +72,21 @@ export class MediaFactory extends Api {
     </div>
     
   </article>`
+  }
+
+  renderAllLightbox(medias){
+    let lbo=''
+    for (let media of medias) {
+      lbo += this.renderLightbox(media)
+    }
+    return lbo
+    console.log(lbo)
+  }
+
+  renderLightbox(media) {
+    return `
+    ${media._image ? media.renderImageLighbox() : media.VideoLightbox()}
+    `
   }
 
   
