@@ -22,15 +22,14 @@ export class MediaFactory extends Api {
           return new VideoMediaCards(media)
         }
       })
-      // console.log(renderPicture)
+      console.log(renderPicture)
 
       let lightbox = medias.map(media => new LightboxContain(media))
-
-      let lbo = '' 
-      for(let lb of lightbox){
-        lbo += lb.openLightbox()
-      }
-      console.log(lightbox)
+      // let lbo = '' 
+      // for(let lb of lightbox){
+      //   lbo += lb.openLightbox()
+      // }
+      // console.log(lightbox)
       // console.log(lbo)
 
       //lorsque nous retournons la methode renderAllMedia on lui transmet notre renderPicture
@@ -73,13 +72,12 @@ export class MediaFactory extends Api {
   </article>`
   }
 
-  renderAllLightbox(medias) {
-    let lbo = ''
+  renderAllLightbox(medias){
+    let lbo=''
     for (let media of medias) {
       lbo += this.renderLightbox(media)
     }
     return lbo
-    console.log(lbo)
   }
 
   renderLightbox(media) {
@@ -88,5 +86,5 @@ export class MediaFactory extends Api {
     `
   }
 
-
+  
 }
