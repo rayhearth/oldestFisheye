@@ -1,22 +1,27 @@
 export class LightboxContain {
 
 
-  // static init() {
-  //   const links = document.querySelectorAll('a[href$=".jpg"],a[href$=".mp4"]')
-  //   .forEach(link =>link.addEventListener('click', e=>{
-  //     e.preventDefault()
-  //     new lightbox(e.currentTarget.getAttribute('href'))
-  //   }))
-  // }
+  static init(medias) {
+    const links = document.querySelectorAll('.mediaLink')
+    links.forEach(link =>{
+      link.removeEventListener('click', e=>{
+        e.preventDefault()
+        new LightboxContain(medias[e.currentTarget.light],medias)
+      })
+      link.addEventListener('click', e=>{
+        e.preventDefault()
+        new LightboxContain(medias[e.currentTarget.light],medias)
+      })
+    })
+    
+  }
 
   constructor(medias) {
-    // this.index = medias.index
-    // console.log(this.index)
     //  element = this.buildDOM(this._id)
     //  document.body.appendChild(element)
     // this._image = medias.image
     //this.currrentMedia = null
-    this.listMedias = medias //permet de récupérer tous les médias pour affichage prev et next
+    this.medias = medias //permet de récupérer tous les médias pour affichage prev et next
     console.log(this.listMedias)
     //this.manageEvent()
   }
