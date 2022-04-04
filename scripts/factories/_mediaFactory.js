@@ -30,7 +30,7 @@ export class MediaFactory extends Api {
         lbo += lb.openLightbox()
       }
       console.log(lightbox)
-      console.log(lbo)
+      // console.log(lbo)
 
       //lorsque nous retournons la methode renderAllMedia on lui transmet notre renderPicture
       return this.renderAllMedia(renderPicture)
