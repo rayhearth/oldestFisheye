@@ -40,7 +40,6 @@ img.logo {
 
 .lightboxOpen .lightbox {
   display: flex;
-  justify-content: center;
 }
 
 .lightbox {
@@ -48,44 +47,47 @@ img.logo {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 8;
   width: 100%;
   height: 100vh;
   background-color: rgba(255, 251, 251, 0.3);
-  z-index: 10;
   transition: opacity 0.3s;
 }
 .lightbox button {
-  opacity: 0.5;
+  cursor: pointer;
+}
+.lightbox button svg {
   height: 30px;
   width: 30px;
-  cursor: pointer;
-  transition: opacity 0.3;
-  text-indent: -3000px;
+  fill: #901C1C;
+  transition: all 0.3s;
 }
-.lightbox button:hover {
-  opacity: 1;
+.lightbox button svg:hover {
+  color: #D3573C;
 }
 .lightbox .lightbox__next,
 .lightbox .lightbox__prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50px;
   height: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin-top: -14px;
+  background: none;
+  border: none;
   z-index: 11;
 }
 .lightbox .lightbox__prev {
   right: auto;
   left: 0;
-  transform: rotate(180deg);
 }
 .lightbox .lightbox__close {
-  width: 15px;
-  height: 15px;
+  width: 30px;
+  height: 30px;
   position: absolute;
   top: 20px;
   right: 20px;
+  background: none;
+  border: none;
   z-index: 12;
 }
 .lightbox .lightbox__close svg {
@@ -95,14 +97,14 @@ img.logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
+  width: 100%;
   margin: auto 0;
 }
 .lightbox .lightbox-media .lightbox-media-container {
   margin-left: 50px;
   margin-right: 50px;
 }
-.lightbox .lightbox-media .lightbox-media-container img {
+.lightbox .lightbox-media .lightbox-media-container img, .lightbox .lightbox-media .lightbox-media-container video {
   max-height: 100vh;
   max-width: 100%;
   -o-object-fit: cover;
