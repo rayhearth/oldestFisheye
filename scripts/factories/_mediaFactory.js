@@ -75,7 +75,7 @@ export class MediaFactory extends Api {
   }
 
   renderLightbox(media) {
-    return `<div class="lightbox-media-container">
+    return `<div class="lightbox-media-container" id=${media._id}>
     ${media._image ? media.renderImageLighbox() : media.renderVideoLightbox()}
     <h2 class="lightbox-media-title" data-lightbox-caption>${media._title}</h2>
     </div>
