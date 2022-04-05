@@ -25,16 +25,18 @@ export class LightboxContain {
   //Méthode pour afficher la modale et injecter notre media
   openLightbox(){
     //e.preventDefault()
+    //le media en cours est le media sur lequel on vient de click
     this.currentMedia = e.currentTarget.querySelector('mediaLink')
+    // console.log(currentMedia)
     console.log(this.currentMedia)
+    
     document.body.classList.add('overflow')
+    document.body.classList.add('lightboxOpen')
     window.scrollTo(0, 0)
     lightbox-media.scrollTo(0, 0)
     
     lightbox.setAttribute('aria-hidden', 'false')
     lightbox.style.display = ''
-    //le media en cours est le media sur lequel on vient de click
-    // console.log(currentMedia)
 
     // let content = document.querySelector('#light')
 
@@ -42,7 +44,6 @@ export class LightboxContain {
     
     
     //on ajoute notre class ligthboxopen
-    document.body.classList.add('lightboxOpen')
   }
 
   //méthode pour la navigation au clavier

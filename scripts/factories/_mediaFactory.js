@@ -22,16 +22,10 @@ export class MediaFactory extends Api {
           return new VideoMediaCards(media)
         }
       })
-      console.log(renderPicture)
+      // console.log(renderPicture)
 
-      let lightbox = medias.map(media => new LightboxContain(media))
-      // let lbo = '' 
-      // for(let lb of lightbox){
-      //   lbo += lb.openLightbox()
-      // }
-      // console.log(lightbox)
-      // console.log(lbo)
-
+      // let lightbox = medias.map(media => new LightboxContain(media))
+      return this.renderAllLightbox(renderPicture)
       //lorsque nous retournons la methode renderAllMedia on lui transmet notre renderPicture
       return this.renderAllMedia(renderPicture)
     } catch (err) {
@@ -46,9 +40,7 @@ export class MediaFactory extends Api {
     }
     return all
   }
-
   // renderPicture = new MediasFactory
-
 
   renderOneMedia(media) {
     // console.log(media)
@@ -68,12 +60,11 @@ export class MediaFactory extends Api {
         </svg>
       </div>
     </div>
-    
   </article>`
   }
 
-  renderAllLightbox(medias){
-    let lbo=''
+  renderAllLightbox(medias) {
+    let lbo = ''
     for (let media of medias) {
       lbo += this.renderLightbox(media)
     }
@@ -81,10 +72,12 @@ export class MediaFactory extends Api {
   }
 
   renderLightbox(media) {
-    return `
-    ${media._image ? media.renderImageLighbox() : media.VideoLightbox()}
+    return `<div class="lightbox-media-container">
+    ${media._image ? media.renderImageLighbox() : media.renderVideoLightbox()}
+    <h2 class="lightbox-media-title" data-lightbox-caption>${media._title}</h2>
+    </div>
     `
   }
 
-  
+
 }
