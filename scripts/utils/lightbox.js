@@ -1,5 +1,6 @@
 export class LightboxContain {
 
+  openLightbox = document.querySelector('#media-id')
 
     constructor(medias) {
     // this._image = medias.image
@@ -23,20 +24,20 @@ export class LightboxContain {
   }
   
   //Méthode pour afficher la modale et injecter notre media
-  openLightbox(){
+  openLightbox() {
+    document.body.classList.add('overflow')
+    document.body.classList.add('lightboxOpen')
+    window.scrollTo(0, 0)
+    lightbox-media.scrollTo(0, 0)
+    lightbox.setAttribute('aria-hidden', 'false')
+    
+    lightbox.style.display = ''
     //e.preventDefault()
     //le media en cours est le media sur lequel on vient de click
     this.currentMedia = e.currentTarget.querySelector('mediaLink')
     // console.log(currentMedia)
     console.log(this.currentMedia)
     
-    document.body.classList.add('overflow')
-    document.body.classList.add('lightboxOpen')
-    window.scrollTo(0, 0)
-    lightbox-media.scrollTo(0, 0)
-    
-    lightbox.setAttribute('aria-hidden', 'false')
-    lightbox.style.display = ''
 
     // let content = document.querySelector('#light')
 

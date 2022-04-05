@@ -41,10 +41,12 @@ let displayAllMedia = async () => {
     // console.log(media)
     let AllMedias = await media.getAllMedia(urlId)
     // let AllMediasLightbox = await media.getAllMedia(urlId)
-    console.log(AllMedias)
+    // console.log(AllMedias)
 
     document.querySelector('.galleryContainer').innerHTML = AllMedias.gallery
     document.querySelector('.lightbox-media').innerHTML = AllMedias.lightrender
+
+
     // document.querySelector('#light').innerHTML = media.light
 
     // let lightboxData = document.querySelectorAll('.mediaLink')
