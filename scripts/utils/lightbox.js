@@ -1,149 +1,151 @@
 export class LightboxContain {
 
-  openLightbox = document.querySelector('#media-id')
+  //DOM element
+  openLightboxBtn = document.querySelector('.mediaLink')
+  closeLightboxBtn = document.querySelector('#lightbox__close')
+  nextBtn = document.querySelector('#lightbox__next')
+  prevBtn = document.querySelector('#lightbox__prev')
 
-    constructor(medias) {
-    // this._image = medias.image
-    //this.currrentMedia = null
-    this.listMedias = medias //permet de récupérer tous les médias pour affichage prev et next
-    console.log(this.listMedias)
-    //this.manageEvent()
-  }
 
+  static init(){
+    launchLightbox.forEach(el => {
+      el.addEventListener("click", event => {
+        event.preventDefault()
+        event.stopPropagation()
+        //on declare la variable mediaId au media-id sur lequel on vient de declencher notre event
+        let mediaId = event.target.getAttribute('media-id')
+          //si l'id de this currentMedia est égale à notre variable MediaId
+          if (this.currentMedia == mediaId) {
+            //Alors je veux que tu lance ma meth openlightbox et manage event
+            openLightbox()
   
-
-  //methode pour rechercher dans nos médias l'id qui est égale à l'id passé ds la méthode
-  mediaById(id){
-    return this.listMedias.find((media) => media.id == id)
-  }
-
-  //affiche modal au click d'un média
-  CurrentLightbox(id){
-    this.currentMedia = this.mediaById(id)
-    this.openLightbox()
-  }
-  
-  //Méthode pour afficher la modale et injecter notre media
-  openLightbox() {
-    document.body.classList.add('overflow')
-    document.body.classList.add('lightboxOpen')
-    window.scrollTo(0, 0)
-    lightbox-media.scrollTo(0, 0)
-    lightbox.setAttribute('aria-hidden', 'false')
-    
-    lightbox.style.display = ''
-    //e.preventDefault()
-    //le media en cours est le media sur lequel on vient de click
-    this.currentMedia = e.currentTarget.querySelector('mediaLink')
-    // console.log(currentMedia)
-    console.log(this.currentMedia)
-    
-
-    // let content = document.querySelector('#light')
-
-    document.addEventListener('keyup', this.onKeyUp)
-    
-    
-    //on ajoute notre class ligthboxopen
-  }
-
-  //méthode pour la navigation au clavier
-  onKeyUp(e) {
-    if (e.key === "Escape") {
-      this.closeLightbox(e)
-    } else if (e.key === "ArrowLeft") {
-      this.previous(e)
-    } else if (e.key === "ArrowRight") {
-      this.next(e)
-    }
-  }
-
-
-  next() {
-      for (let i=0; i<this.listMedias.length; i++) {
-        if(this.listMedias[i] == this.currentMedia){
-          if(i == this.listMedias.lenght){
-            this.currentMedia = this.listMedias[0]
-          }else{
-            this.currentMedia = this.listMedias[++i]
+            manageEvent()
           }
-          break
-        }
-      }
+      })
+    })
   }
+  //Listener
 
-  previous() {
-    for (let i=0; i<this.listMedias.length; i++) {
-      if(this.listMediass[i] == this.currentMedia){
-        if(i == this.listMedias.lenght){
-          this.currentMedia = this.listMedias[0]
-        }else{
-          this.currentMedia = this.listMedias[--i]
-        }
-        break
+constructor(medias) {
+  // on recup toutes les infos de nos medias
+  this.listMedias = medias
+  //on recup tous les id
+  this.currentMedia = medias.id
+  // console.log(this.currentMedia)
+  //this.manageEvent()
+}
+
+
+//Méthode pour afficher la modale
+openLightbox() {
+  document.body.classList.add('overflow')
+  document.body.classList.add('lightboxOpen')
+  window.scrollTo(0, 0)
+  lightbox-media.scrollTo(0, 0)
+  lightbox.setAttribute('aria-hidden', 'false')
+
+  lightbox.style.display = ''
+
+  document.addEventListener('keyup', this.onKeyUp)
+}
+
+//méthode pour la navigation au clavier
+onKeyUp(e) {
+  if (e.key === "Escape") {
+    this.closeLightbox(e)
+  } else if (e.key === "ArrowLeft") {
+    this.previous(e)
+  } else if (e.key === "ArrowRight") {
+    this.next(e)
+  }
+}
+
+
+next() {
+  for (let i = 0; i < this.listMedias.length; i++) {
+    if (this.listMedias[i] == this.currentMedia) {
+      if (i == this.listMedias.lenght) {
+        this.currentMedia = this.listMedias[0]
+      } else {
+        this.currentMedia = this.listMedias[++i]
       }
+      break
     }
   }
+}
 
-  manageEvent() {
-    const nextMedia = document.querySelector(".lightbox__next")
-    nextMedia.addEventListener("click", () => {
-      this.next()
-    })
-    // nextMedia.addEventListener('keydown',nextEvent =>{
-    //   if(nextEvent.keycode === 13 || nextEvent.keycode === 32){
-    //     nextEvent.preventDefault()
-    //     this.next()
-    //   }
-    // })
-
-    const prevMedia = document.querySelector(".lightbox__prev")
-    prevMedia.addEventListener("click", () => {
-      this.previous()
-    })
-    // prevMedia.addEventListener('keydown',prevEvent =>{
-    //   if(prevEvent.keycode === 13 || prevEvent.keycode === 32){
-    //     nextEvent.preventDefault()
-    //     this.previous()
-    //   }
-    // })
-
-    const closeBtn = document.querySelector("#lightbox__close")
-    closeBtn.addEventListener("click", () => {
-      this.closeLightbox()
-    })
+previous() {
+  for (let i = 0; i < this.listMedias.length; i++) {
+    if (this.listMediass[i] == this.currentMedia) {
+      if (i == this.listMedias.lenght) {
+        this.currentMedia = this.listMedias[0]
+      } else {
+        this.currentMedia = this.listMedias[--i]
+      }
+      break
+    }
   }
+}
 
-  
-  //Fermeture de la lightbox
-  closeLightbox() {
-    document.body.classList.remove('lightboxOpen')
-    document.body.classList.remove('overflow')
-    document.removeEventListener('Keyup', this.onKeyUp)
-    document.querySelector('#openModal').focus()
-    lightbox.setAttribute('aria-hidden', 'true')
+manageEvent() {
+  const nextMedia = document.querySelector("#lightbox__next")
+  nextMedia.addEventListener("click", () => {
+    this.next()
+  })
+  // nextMedia.addEventListener('keydown',nextEvent =>{
+  //   if(nextEvent.keycode === 13 || nextEvent.keycode === 32){
+  //     nextEvent.preventDefault()
+  //     this.next()
+  //   }
+  // })
 
-    lightbox.style.display = 'none'
-  }
+  const prevMedia = document.querySelector("#lightbox__prev")
+  prevMedia.addEventListener("click", () => {
+    this.previous()
+  })
+  // prevMedia.addEventListener('keydown',prevEvent =>{
+  //   if(prevEvent.keycode === 13 || prevEvent.keycode === 32){
+  //     nextEvent.preventDefault()
+  //     this.previous()
+  //   }
+  // })
 
-  //focus la lightbox
-  LightboxFocus() {
-    const lightboxTitleMedia = document.querySelector("h2")
-    lightboxTitleMedia.focus()
-    const closeBtn = document.querySelector(".lightbox__close")
-    const prev = document.querySelector(".lightbox__prev")
-    const next = document.querySelector(".lightbox__next")
+  const closeBtn = document.querySelector("#lightbox__close")
+  closeBtn.addEventListener("click", () => {
+    this.closeLightbox()
+  })
+}
 
-    lightboxTitleMedia.addEventListener("focusout", () => {
-      next.focus()
-    })
-    arrowRight.addEventListener("focusout", () => {
-      prev.focus()
-    })
-    arrowLeft.addEventListener("focusout", () => {
-      closeBtn.focus()
-    })
-  }
+
+//Fermeture de la lightbox
+closeLightbox() {
+  document.body.classList.remove('lightboxOpen')
+  document.body.classList.remove('overflow')
+  document.removeEventListener('Keyup', this.onKeyUp)
+  document.querySelector('#openModal').focus()
+  lightbox.setAttribute('aria-hidden', 'true')
+
+  lightbox.style.display = 'none'
+}
+
+//focus la lightbox
+LightboxFocus() {
+  const lightboxTitleMedia = document.querySelector("h2")
+  lightboxTitleMedia.focus()
+  const closeBtn = document.querySelector("#lightbox__close")
+  const prev = document.querySelector("#lightbox__prev")
+  const next = document.querySelector("#lightbox__next")
+
+  lightboxTitleMedia.addEventListener("focusout", () => {
+    next.focus()
+  })
+  arrowRight.addEventListener("focusout", () => {
+    prev.focus()
+  })
+  arrowLeft.addEventListener("focusout", () => {
+    closeBtn.focus()
+  })
+}
 
 
 }
