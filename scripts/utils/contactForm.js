@@ -1,3 +1,4 @@
+
 // DOM Elements
 
 // let closeModalBtn = document.querySelectorAll('.closeModal')
@@ -27,12 +28,21 @@ function closeModal() {
     modal.getAttribute("aria-hidden", "true")
 }
 
+/*fields error function*/
+
+function showfieldError(el){
+el.closest('form-group').dataset.errorVisible = true
+}
+
+function closeFieldError(el){
+el.closest('form-group').dataset.errorVisible = null}
+
 
 /*Validation form and listener*/
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
-
+    console.log(form.elements)
     // Expression for fields
     const verifMail = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/
     const textFormat = /^[a-z\é\è\-\^\']{2,}$/i
@@ -43,27 +53,26 @@ form.addEventListener("submit", function (e) {
     // Firstname - min 2 char & not empty
     if (!form.elements['first'].value.trim().match(textFormat)) {
         formFlag = false
-        firstError.textContent = 'Veuillez entrer 2 caractères ou plus pour le champ du prénom'
+        showFieldError(form.element['firstName'])
     } else {
-        firstError.innerHTML = ''
+        closeFieldError(form.element['firstName'])
     }
 
     // Lastname - min 2 char & not empty
     if (!form.elements['last'].value.trim().match(textFormat)) {
         formFlag = false
-        lastError.textContent = 'Veuillez entrer 2 caractères ou plus pour le champ du nom.'
+        showFieldError(form.element['firstName'])
     } else {
-        lastError.innerHTML = ''
+        closeFieldError(form.element['firstName'])
     }
 
     // email validity
     if (!form.elements['email'].value.trim().match(verifMail)) {
         formFlag = false
-        mailError.textContent = 'L\'adresse email n\'est pas Valide.'
+        showFieldError(form.element['firstName'])
     } else {
-        mailError.innerHTML = ''
+        closeFieldError(form.element['firstName'])
     }
-
 
     //Check validation errors
     if (!formFlag) {
@@ -71,5 +80,3 @@ form.addEventListener("submit", function (e) {
     }
 
 })
-
-

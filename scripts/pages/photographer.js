@@ -30,6 +30,8 @@ let displayOnePhotograph = async () => {
         el.addEventListener('click', closeModal)
     })
 
+    
+
 }
 
 window.addEventListener('load', displayOnePhotograph())

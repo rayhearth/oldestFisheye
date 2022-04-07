@@ -8,12 +8,21 @@ export class LightboxContain {
 
 
   static init(){
+    //je sélectionne tous les liens qui mènent vers les img ou video ayant le selecteur medi-id
+    // const Links = document.querySelectorAll('#media-id')
+      //pour chaque lien je lui ajoute un listener qui lors du click prend en param l'évènement
+      // forEach(link => link.addEventListener('click', e=> {
+        //on stoppe le comportement
+        // e.preventDefault()
+        //on initialise une nouvelle lightbox pour cela on recup le lien de notre media 
+        // new LightboxContain(e.currentTarget.getAttribute('#media-id'))
+      // }))
     launchLightbox.forEach(el => {
-      el.addEventListener("click", event => {
-        event.preventDefault()
-        event.stopPropagation()
+      el.addEventListener("click", e => {
+        e.preventDefault()
+        e.stopPropagation()
         //on declare la variable mediaId au media-id sur lequel on vient de declencher notre event
-        let mediaId = event.target.getAttribute('media-id')
+        let mediaId = e.target.getAttribute('#media-id')
           //si l'id de this currentMedia est égale à notre variable MediaId
           if (this.currentMedia == mediaId) {
             //Alors je veux que tu lance ma meth openlightbox et manage event
@@ -24,6 +33,8 @@ export class LightboxContain {
       })
     })
   }
+
+  
   //Listener
 
 constructor(medias) {
@@ -149,3 +160,5 @@ LightboxFocus() {
 
 
 }
+
+LightboxContain.init()
