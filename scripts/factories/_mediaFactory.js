@@ -26,8 +26,8 @@ export class MediaFactory extends Api {
 
       return {
         gallery: this.renderAllMedia(renderPicture),
-        lightrender: this.renderAllLightbox(renderPicture),
-        lightbox: medias.map(media => new LightboxContain(media))
+        lightrender : this.renderAllLightbox(renderPicture),
+        lightbox : medias.map(media => new LightboxContain(media))
       }
       //lorsque nous retournons la methode renderAllMedia on lui transmet notre renderPicture
       // return this.renderAllMedia(renderPicture)

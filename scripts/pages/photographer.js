@@ -30,8 +30,6 @@ let displayOnePhotograph = async () => {
         el.addEventListener('click', closeModal)
     })
 
-    
-
 }
 
 window.addEventListener('load', displayOnePhotograph())
@@ -44,13 +42,11 @@ let displayAllMedia = async () => {
     let AllMedias = await media.getAllMedia(urlId)
     // let AllMediasLightbox = await media.getAllMedia(urlId)
     // console.log(AllMedias)
-    // console.log(LightboxContain)
 
     document.querySelector('.galleryContainer').innerHTML = AllMedias.gallery
     document.querySelector('.lightbox-media').innerHTML = AllMedias.lightrender
 
-    // let openLightboxBtn = document.querySelector('#media-id')
-    // openLightboxBtn.addEventListener('click',openLightbox)
+
     // document.querySelector('#light').innerHTML = media.light
 
     // let lightboxData = document.querySelectorAll('.mediaLink')
