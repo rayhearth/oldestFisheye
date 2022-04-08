@@ -1,7 +1,6 @@
 import { PhotographFactory } from '../factories/_photographFactory.js'
 import { MediaFactory } from '../factories/_mediaFactory.js'
 import { LightboxContain } from '../utils/lightbox.js'
-// import { LightboxContain } from '../utils/lightbox.js'
 
 // let data = new Photograph()
 
@@ -18,17 +17,62 @@ let displayOnePhotograph = async () => {
     let OnePhotograph = await photograph.getOnePhotograph(urlId)
 
     document.querySelector('#photographer').innerHTML = OnePhotograph
-    
+
     //on recupère le nom du photographe va le h1 et on l'injecte via l'id
     let name = document.querySelector('h1').textContent
     document.querySelector('#photographerName').innerHTML = name
+    
+    let form = document.forms['contactForm']
     // on déclare nos sélecteurs et les events apres le chargement de la methode getOnePhotograph
     let openModalBtn = document.querySelector('#openModal')
     openModalBtn.addEventListener("click", openModal)
-    
+
     let closeModalBtn = document.querySelectorAll('.closeModal')
     closeModalBtn.forEach(el => {
         el.addEventListener('click', closeModal)
+    })
+
+    // console.log(form)
+    /*Validation form and listener*/
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        console.log(form.elements)
+        // Expression for fields
+        const verifMail = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/
+        const textFormat = /^[a-z\é\è\-\^\']{2,}$/i
+
+        //Form flag validation
+        let formFlag = true
+
+        // Firstname - min 2 char & not empty
+        if (!form.elements['first'].value.trim().match(textFormat)) {
+            formFlag = false
+            showFieldError(form.element['firstName'])
+        } else {
+            closeFieldError(form.element['firstName'])
+        }
+
+        // Lastname - min 2 char & not empty
+        if (!form.elements['last'].value.trim().match(textFormat)) {
+            formFlag = false
+            showFieldError(form.element['firstName'])
+        } else {
+            closeFieldError(form.element['firstName'])
+        }
+
+        // email validity
+        if (!form.elements['email'].value.trim().match(verifMail)) {
+            formFlag = false
+            showFieldError(form.element['firstName'])
+        } else {
+            closeFieldError(form.element['firstName'])
+        }
+
+        //Check validation errors
+        if (!formFlag) {
+            return false
+        }
     })
 
 }
@@ -51,7 +95,7 @@ let displayAllMedia = async () => {
     // document.querySelector('#light').innerHTML = media.light
 
     // let lightboxData = document.querySelectorAll('.mediaLink')
-    
+
 
 
     // function getlightbox(){
@@ -69,7 +113,7 @@ let displayAllMedia = async () => {
     // lightboxData.forEach(el =>{
     //     el.addEventListener('click', openLightbox)
     // })
-    
+
     // console.log(lightboxData)
     // for(let i=0; i<lightboxData.childNodes.length; i++){
     //     lightboxData.childNodes[i].childNodes[0].addEventListener('click',function(){

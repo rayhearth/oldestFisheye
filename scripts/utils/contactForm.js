@@ -2,7 +2,7 @@
 // DOM Elements
 
 // let closeModalBtn = document.querySelectorAll('.closeModal')
-let form = document.forms['contactForm']
+// let form = document.forms['contactForm']
 let modal = document.querySelector('#contactModal')
 
 /*Fonction Open Modal*/
@@ -40,43 +40,43 @@ el.closest('form-group').dataset.errorVisible = null}
 
 /*Validation form and listener*/
 
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    console.log(form.elements)
-    // Expression for fields
-    const verifMail = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/
-    const textFormat = /^[a-z\é\è\-\^\']{2,}$/i
+// form.addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     console.log(form.elements)
+//     // Expression for fields
+//     const verifMail = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/
+//     const textFormat = /^[a-z\é\è\-\^\']{2,}$/i
 
-    //Form flag validation
-    let formFlag = true
+//     //Form flag validation
+//     let formFlag = true
 
-    // Firstname - min 2 char & not empty
-    if (!form.elements['first'].value.trim().match(textFormat)) {
-        formFlag = false
-        showFieldError(form.element['firstName'])
-    } else {
-        closeFieldError(form.element['firstName'])
-    }
+//     // Firstname - min 2 char & not empty
+//     if (!form.elements['first'].value.trim().match(textFormat)) {
+//         formFlag = false
+//         showFieldError(form.element['firstName'])
+//     } else {
+//         closeFieldError(form.element['firstName'])
+//     }
 
-    // Lastname - min 2 char & not empty
-    if (!form.elements['last'].value.trim().match(textFormat)) {
-        formFlag = false
-        showFieldError(form.element['firstName'])
-    } else {
-        closeFieldError(form.element['firstName'])
-    }
+//     // Lastname - min 2 char & not empty
+//     if (!form.elements['last'].value.trim().match(textFormat)) {
+//         formFlag = false
+//         showFieldError(form.element['firstName'])
+//     } else {
+//         closeFieldError(form.element['firstName'])
+//     }
 
-    // email validity
-    if (!form.elements['email'].value.trim().match(verifMail)) {
-        formFlag = false
-        showFieldError(form.element['firstName'])
-    } else {
-        closeFieldError(form.element['firstName'])
-    }
+//     // email validity
+//     if (!form.elements['email'].value.trim().match(verifMail)) {
+//         formFlag = false
+//         showFieldError(form.element['firstName'])
+//     } else {
+//         closeFieldError(form.element['firstName'])
+//     }
 
-    //Check validation errors
-    if (!formFlag) {
-        return false
-    }
+//     //Check validation errors
+//     if (!formFlag) {
+//         return false
+//     }
 
-})
+// })
